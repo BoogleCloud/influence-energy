@@ -1,0 +1,607 @@
+ID,Name,Tactic,Level,IEL,Description,Examples,Skills Needed to Use
+T1001,Data Obfuscation,Command and Control,1 Public,1,"When choosing a C2 method, there are many public obfuscation capabilities.",Meterpreter HTTP comms,basic cli
+T1001,Data Obfuscation,Command and Control,2 Altered,2,Modifying a public data obfuscation method would require knowledge of the underlying protocol and implementation,,
+T1001,Data Obfuscation,Command and Control,3 Bespoke,4,Creating a custom obfuscation requires high level of knowledge about the target environment,"https://research.checkpoint.com/2021/irans-apt34-returns-with-an-updated-arsenal/,https://www.crowdstrike.com/blog/observations-from-the-stellarparticle-campaign/",
+T1003,OS Credential Dumping,Credential Access,1 Public,1,Public tools exist to dump credentaisl from os assuming you have the right privileges,https://attack.mitre.org/software/S0002/,Requires CLI use
+T1003,OS Credential Dumping,Credential Access,2 Altered,2,Embedding pieces of mimikatz code as a plugin in another tool,,
+T1003,OS Credential Dumping,Credential Access,3 Bespoke,3,Writing custom code that manipulates APIs to read the data,,
+T1005,Data from Local System,Collection,1 Public,0,Known commands that are suspicious,,Copy / paste
+T1005,Data from Local System,Collection,2 Altered,1,Any OS command that copies data from one place to another,,cli knowledge
+T1005,Data from Local System,Collection,3 Bespoke,2,Commands that mimic target backup strategies,,
+T1006,Direct Volume Access,Defense Evasion,1 Public,1,Using example strings to activate lolbin,https://lolbas-project.github.io/lolbas/Binaries/Esentutl/,Need to know about when to use this
+T1006,Direct Volume Access,Defense Evasion,2 Altered,2,Modifying the command to copy in a slightly different way,,
+T1006,Direct Volume Access,Defense Evasion,3 Bespoke,3,Custom malware that can access the driver,https://www.microsoft.com/en-us/security/blog/2023/10/25/octo-tempest-crosses-boundaries-to-facilitate-extortion-encryption-and-destruction/,
+T1007,System Service Discovery,Discovery,1 Public,0,`sc query` or similar commands,,
+T1007,System Service Discovery,Discovery,2 Altered,1,Slightly different commands,,
+T1007,System Service Discovery,Discovery,3 Bespoke,2,Malware that can call functions directly,https://s7d2.scene7.com/is/content/cylance/prod/cylance-web/en-us/resources/knowledge-center/resource-library/reports/Op_Dust_Storm_Report.pdf,
+T1008,Fallback Channels,Command and Control,1 Public,2,Something like a hardcoded secondary domain,https://vblocalhost.com/uploads/VB2021-Kayal-etal.pdf,
+T1008,Fallback Channels,Command and Control,2 Altered,3,DNS Tunneling with your own domain,https://researchcenter.paloaltonetworks.com/2017/07/unit42-oilrig-uses-ismdoor-variant-possibly-linked-greenbug-threat-group/,
+T1008,Fallback Channels,Command and Control,3 Bespoke,4,Company extranet servers,https://scadahacker.com/library/Documents/Cyber_Events/McAfee%20-%20Night%20Dragon%20-%20Global%20Energy%20Cyberattacks.pdf,High degree of intelligence and network mapping needing to know about the specific systems and compromise them
+T1010,Application Window Discovery,Discovery,1 Public,1,Get-Process mainWindowTitle,,
+T1010,Application Window Discovery,Discovery,2 Altered,2,GetForegroundWindow,,
+T1010,Application Window Discovery,Discovery,3 Bespoke,3,Memory access,,
+T1011,Exfiltration Over Other Network Medium,Exfiltration,1 Public,3,Known protocol like wifi network,,Requires proximity
+T1011,Exfiltration Over Other Network Medium,Exfiltration,2 Altered,4,Known protocol with environment-alteration,,Requires proximity
+T1011,Exfiltration Over Other Network Medium,Exfiltration,3 Bespoke,5,Custom-developed medium,,"Requires proximity, signal development"
+T1012,Query Registry,Discovery,1 Public,0,reg.exe,https://www.welivesecurity.com/2019/05/22/journey-zebrocy-land/,
+T1012,Query Registry,Discovery,2 Altered,2,Use Windows APIs,https://us-cert.cisa.gov/ncas/analysis-reports/ar20-216a,
+T1012,Query Registry,Discovery,3 Bespoke,3,Directly access registry hives,,
+T1014,Rootkit,Defense Evasion,1 Public,2,Setting environment variables to hook the dynamic linker,https://www.welivesecurity.com/2017/10/30/windigo-ebury-update-2/,
+T1014,Rootkit,Defense Evasion,2 Altered,3,Custom malicious driver,"https://www.theregister.com/2020/08/07/def_con_demirkapi/,https://www.cyberark.com/resources/threat-research-blog/fantastic-rootkits-and-where-to-find-them-part-1",
+T1014,Rootkit,Defense Evasion,3 Bespoke,4,Custom rootkit kernel module,https://media.defense.gov/2020/Aug/13/2002476465/-1/-1/0/CSA_DROVORUB_RUSSIAN_GRU_MALWARE_AUG_2020.PDF,
+T1016,System Network Configuration Discovery,Discovery,1 Public,0,CLI tools like ipconfig or Get-NetIPConfiguration,https://s7d2.scene7.com/is/content/cylance/prod/cylance-web/en-us/resources/knowledge-center/resource-library/reports/Op_Dust_Storm_Report.pdf,
+T1016,System Network Configuration Discovery,Discovery,2 Altered,2,Calling API commands,https://www.cybereason.com/blog/royal-ransomware-analysis,
+T1016,System Network Configuration Discovery,Discovery,3 Bespoke,3,Look for network configuration stored in environment-specific way,,
+T1018,Remote System Discovery,Discovery,1 Public,1,CLI tools like show arp or ping,,Requires a bit of networking knowledge
+T1018,Remote System Discovery,Discovery,2 Altered,2,Looking at persistent connections,,
+T1018,Remote System Discovery,Discovery,3 Bespoke,3,Analyzing environment-specific applications to see what they communicate with,,
+T1020,Automated Exfiltration,Exfiltration,1 Public,1,Meterpreter scripted upload,,
+T1020,Automated Exfiltration,Exfiltration,2 Altered,2,Changing the script,,
+T1020,Automated Exfiltration,Exfiltration,3 Bespoke,3,Custom search method,,
+T1021,Remote Services,Lateral Movement,1 Public,0,Metasploit winrm login module,https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/exploit/windows/winrm/winrm_script_exec.md,Not an exploit or how you got the account
+T1021,Remote Services,Lateral Movement,2 Altered,1,Manually calling RDP from command line,,
+T1021,Remote Services,Lateral Movement,3 Bespoke,2,Custom tool for creating remote connections,https://securelist.com/apt-style-bank-robberies-increase-with-metel-gcman-and-carbanak-2-0-attacks/73638/,
+T1025,Data from Removable Media,Collection,1 Public,0,Known commands that are suspicious,,
+T1025,Data from Removable Media,Collection,2 Altered,1,Any OS command that copies data from one place to another,https://unit42.paloaltonetworks.com/unit-42-title-gamaredon-group-toolset-evolution/,
+T1025,Data from Removable Media,Collection,3 Bespoke,2,Commands that mimic target backup strategies,,
+T1027,Obfuscated Files or Information,Defense Evasion,1 Public,1,base64 encoding,https://www.malwarebytes.com/blog/news/2021/12/sidecopy-apt-connecting-lures-to-victims-payloads-to-infrastructure,
+T1027,Obfuscated Files or Information,Defense Evasion,2 Altered,2,Multilayer encoding,https://www.mcafee.com/enterprise/en-us/assets/reports/rp-cuba-ransomware.pdf,
+T1027,Obfuscated Files or Information,Defense Evasion,3 Bespoke,3,Embedding malware in legitimate application,https://www.welivesecurity.com/wp-content/uploads/2017/06/Win32_Industroyer.pdf,
+T1029,Scheduled Transfer,Exfiltration,1 Public,2,Powershell empire lets you schedule file upload chunks,,
+T1029,Scheduled Transfer,Exfiltration,2 Altered,3,Randomizing upload or setting work hours,https://web-assets.esetstatic.com/wls/2020/05/ESET_Turla_ComRAT.pdf,
+T1029,Scheduled Transfer,Exfiltration,3 Bespoke,4,Upload based on target environment data usage,,
+T1030,Data Transfer Size Limits,Exfiltration,1 Public,2,Cobalt strike uploads 512KB chunks each time,https://web.archive.org/web/20210825130434/https://cobaltstrike.com/downloads/csmanual38.pdf,
+T1030,Data Transfer Size Limits,Exfiltration,2 Altered,3,Setting specific limit based on c2 traffic profile,,
+T1030,Data Transfer Size Limits,Exfiltration,3 Bespoke,4,Upload based on target environment data usage,,
+T1033,System Owner/User Discovery,Discovery,1 Public,0,macOS `dscl . list /Users | grep -v '_' `,,
+T1033,System Owner/User Discovery,Discovery,2 Altered,1,Read environment variables,,
+T1033,System Owner/User Discovery,Discovery,3 Bespoke,2,Custom function calling getlogin() or similar,,
+T1036,Masquerading,Defense Evasion,1 Public,0,Rename payload `PowerShellInfo.exe`,https://www.secureworks.com/research/darktortilla-malware-analysis,
+T1036,Masquerading,Defense Evasion,2 Altered,1,Renaming payload to something else,,
+T1036,Masquerading,Defense Evasion,3 Bespoke,2,Matching filenames on the compromised system,https://www.crowdstrike.com/blog/observations-from-the-stellarparticle-campaign/,
+T1037,Boot or Logon Initialization Scripts,"Persistence, Privilege Escalation",1 Public,1,HKCU\Environment\UserInitMprLogonScript,https://blog.morphisec.com/cobalt-gang-2.0,
+T1037,Boot or Logon Initialization Scripts,"Persistence, Privilege Escalation",2 Altered,2,Custom init.d script,,
+T1037,Boot or Logon Initialization Scripts,"Persistence, Privilege Escalation",3 Bespoke,3,Hooking a target-specific application,https://www.mandiant.com/resources/blog/unc3524-eye-spy-email,
+T1039,Data from Network Shared Drive,Collection,1 Public,0,Known commands that are suspicious,,
+T1039,Data from Network Shared Drive,Collection,2 Altered,1,Any OS command that copies data from one place to another,https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-259a,
+T1039,Data from Network Shared Drive,Collection,3 Bespoke,2,Commands that mimic target backup strategies,,
+T1040,Network Sniffing,"Credential Access, Discovery",1 Public,1,tcpdump,,
+T1040,Network Sniffing,"Credential Access, Discovery",2 Altered,2,Hook network APIs,https://blog.trendmicro.com/trendlabs-security-intelligence/new-banking-malware-uses-network-sniffing-for-data-theft/,
+T1040,Network Sniffing,"Credential Access, Discovery",3 Bespoke,4,Close access teams,https://www.justice.gov/archives/opa/page/file/1098481/dl,
+T1041,Exfiltration Over C2 Channel,Exfiltration,1 Public,2,Transfer with open source method,,Scripting
+T1041,Exfiltration Over C2 Channel,Exfiltration,2 Altered,3,Modified method transfer,,Programming
+T1041,Exfiltration Over C2 Channel,Exfiltration,3 Bespoke,4,Target-specific exfiltration method,,"Programming, environment intelligence"
+T1046,Network Service Discovery,Discovery,1 Public,1,nmap,https://nmap.org/,
+T1046,Network Service Discovery,Discovery,2 Altered,2,Malware module for scanning,https://github.com/n1nj4sec/pupy,
+T1046,Network Service Discovery,Discovery,3 Bespoke,3,Custom shell commands to initiate connections,,
+T1047,Windows Management Instrumentation,Execution,1 Public,1,Public invokation of wmic.exe,https://www.microsoft.com/en-us/security/blog/2022/06/13/the-many-lives-of-blackcat-ransomware/,
+T1047,Windows Management Instrumentation,Execution,2 Altered,2,Different way of calling wmic,https://www.welivesecurity.com/2022/03/01/isaacwiper-hermeticwizard-wiper-worm-targeting-ukraine/,
+T1047,Windows Management Instrumentation,Execution,3 Bespoke,3,Unique way of calling WMI from APIs,https://techcommunity.microsoft.com/t5/windows-it-pro-blog/wmi-command-line-wmic-utility-deprecation-next-steps/ba-p/4039242,
+T1048,Exfiltration Over Alternative Protocol,Exfiltration,1 Public,2,Transfer with open source method,https://o365blog.com/aadinternals,
+T1048,Exfiltration Over Alternative Protocol,Exfiltration,2 Altered,3,Modified method transfer,,
+T1048,Exfiltration Over Alternative Protocol,Exfiltration,3 Bespoke,4,Target-specific exfiltration method,,
+T1049,System Network Connections Discovery,Discovery,1 Public,1,netstat,,
+T1049,System Network Connections Discovery,Discovery,2 Altered,2,Discovery functions in malware,https://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/w32_duqu_the_precursor_to_the_next_stuxnet.pdf,
+T1049,System Network Connections Discovery,Discovery,3 Bespoke,3,Perform a novel kernel query to get information,,
+T1052,Exfiltration Over Physical Medium,Exfiltration,1 Public,3,well-known file structure on medium,https://securelist.com/agent-btz-a-source-of-inspiration/58551/,"advanced scripting, physical access"
+T1052,Exfiltration Over Physical Medium,Exfiltration,2 Altered,4,Custom file structure on medium,,"programming, physical access"
+T1052,Exfiltration Over Physical Medium,Exfiltration,3 Bespoke,5,Target-specific exfiltration method,,"advanced programming, target information, physical access"
+T1053,Scheduled Task/Job,"Execution, Persistence, Privilege Escalation",1 Public,1,Using well-known invocation,https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/a/earth-lusca-employs-sophisticated-infrastructure-varied-tools-and-techniques/technical-brief-delving-deep-an-analysis-of-earth-lusca-operations.pdf,
+T1053,Scheduled Task/Job,"Execution, Persistence, Privilege Escalation",2 Altered,2,Creating your own invocation of scheduled task,,
+T1053,Scheduled Task/Job,"Execution, Persistence, Privilege Escalation",3 Bespoke,3,Create a custom container than handles your scheduled task,,
+T1055,Process Injection,"Defense Evasion, Privilege Escalation",1 Public,1,meterpreter migrate,,
+T1055,Process Injection,"Defense Evasion, Privilege Escalation",2 Altered,2,Calling API functions,https://blog.malwarebytes.com/threat-analysis/2021/01/retrohunting-apt37-north-korean-apt-used-vba-self-decode-technique-to-inject-rokrat/,
+T1055,Process Injection,"Defense Evasion, Privilege Escalation",3 Bespoke,3,Novel method of inserting code into a process,,
+T1056,Input Capture,"Collection, Credential Access",1 Public,2,Meterpreter keyscanner,https://www.offsec.com/metasploit-unleashed/keylogging/,
+T1056,Input Capture,"Collection, Credential Access",2 Altered,3,API Hooking,https://www.cybereason.com/hubfs/dam/collateral/reports/11-2020-Chaes-e-commerce-malware-research.pdf,
+T1056,Input Capture,"Collection, Credential Access",3 Bespoke,4,Physical implant on a human interface device,,
+T1057,Process Discovery,Discovery,1 Public,0,`Get-Process` or similar OS command,,
+T1057,Process Discovery,Discovery,2 Altered,2,Malware module for scanning,https://www.fortinet.com/blog/threat-research/in-depth-analysis-of-net-malware-javaupdtr,
+T1057,Process Discovery,Discovery,3 Bespoke,3,Perform a novel kernel query to get information,,
+T1059,Command and Scripting Interpreter,Execution,1 Public,1,typing cli commands,,cli
+T1059,Command and Scripting Interpreter,Execution,2 Altered,2,writing scripts,,scripting
+T1059,Command and Scripting Interpreter,Execution,3 Bespoke,3,Novel scripting interpreter execution method,,
+T1068,Exploitation for Privilege Escalation,Privilege Escalation,1 Public,2,Known exploits,,
+T1068,Exploitation for Privilege Escalation,Privilege Escalation,2 Altered,3,Altered exploits,https://www.fireeye.com/blog/threat-research/2017/05/cyber-espionage-apt32.html,
+T1068,Exploitation for Privilege Escalation,Privilege Escalation,3 Bespoke,4,Zero day exploits,,
+T1069,Permission Groups Discovery,Discovery,1 Public,0,net group,https://web.archive.org/web/20170718174931/https://www.melani.admin.ch/dam/melani/de/dokumente/2016/technical%20report%20ruag.pdf.download.pdf/Report_Ruag-Espionage-Case.pdf,
+T1069,Permission Groups Discovery,Discovery,2 Altered,2,Malware function for groups,https://cloud.google.com/blog/topics/threat-intelligence/suspected-chinese-espionage-group-targeting-maritime-and-engineering-industries/,
+T1069,Permission Groups Discovery,Discovery,3 Bespoke,3,Novel access method for enumerating groups,,
+T1070,Indicator Removal,Defense Evasion,1 Public,1,Clearing windows event logs with `wevtutil cl System`,https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/,
+T1070,Indicator Removal,Defense Evasion,2 Altered,2,Clearing artifacts that specific malware writes,https://www.cybereason.com/blog/back-to-the-future-inside-the-kimsuky-kgh-spyware-suite,
+T1070,Indicator Removal,Defense Evasion,3 Bespoke,3,Restoring kernel table state after exploit,https://blog.malwarebytes.com/threat-intelligence/2022/01/north-koreas-lazarus-apt-leverages-windows-update-client-github-in-latest-campaign/,
+T1071,Application Layer Protocol,Command and Control,1 Public,1,Using something like http communications from open source library,,
+T1071,Application Layer Protocol,Command and Control,2 Altered,2,Modified http communication process,,
+T1071,Application Layer Protocol,Command and Control,3 Bespoke,3,Environment-specific protocol for C2,https://unit42.paloaltonetworks.com/lucifer-new-cryptojacking-and-ddos-hybrid-malware/,
+T1072,Software Deployment Tools,"Execution, Lateral Movement",1 Public,3,Something like remoteexec,https://www.microsoft.com/en-us/security/blog/2022/10/14/new-prestige-ransomware-impacts-organizations-in-ukraine-and-poland/,
+T1072,Software Deployment Tools,"Execution, Lateral Movement",2 Altered,4,Hijack group policy,,
+T1072,Software Deployment Tools,"Execution, Lateral Movement",3 Bespoke,5,Compromise org-specific security tool,https://www.fireeye.com/blog/threat-research/2017/05/cyber-espionage-apt32.html,
+T1074,Data Staged,Collection,1 Public,0,Copying data to /tmp,,
+T1074,Data Staged,Collection,2 Altered,1,Copying data to C:\Users\Public,https://www.mandiant.com/resources/blog/updates-on-chinese-apt-compromising-pulse-secure-vpn-devices,
+T1074,Data Staged,Collection,3 Bespoke,2,Using environment-specific data stores,,
+T1078,Valid Accounts,"Defense Evasion, Initial Access, Persistence, Privilege Escalation",1 Public,0,admin/admin creds,,
+T1078,Valid Accounts,"Defense Evasion, Initial Access, Persistence, Privilege Escalation",2 Altered,1,Brute force changed credentials,,
+T1078,Valid Accounts,"Defense Evasion, Initial Access, Persistence, Privilege Escalation",3 Bespoke,1,Phsihing access to actual accounts,,
+T1080,Taint Shared Content,Lateral Movement,1 Public,1,Known content infection method,,
+T1080,Taint Shared Content,Lateral Movement,2 Altered,2,Customized content infection,https://www.secureworks.com/research/bronze-butler-targets-japanese-businesses,
+T1080,Taint Shared Content,Lateral Movement,3 Bespoke,3,Target-specific method,https://www.wired.com/images_blogs/threatlevel/2011/02/Symantec-Stuxnet-Update-Feb-2011.pdf,
+T1082,System Information Discovery,Discovery,1 Public,0,`systeminfo` OS command,https://www.trellix.com/blogs/research/akira-ransomware/,
+T1082,System Information Discovery,Discovery,2 Altered,1,Query web APIs to determine attributes,https://unit42.paloaltonetworks.com/unit42-bisonal-malware-used-attacks-russia-south-korea/,
+T1082,System Information Discovery,Discovery,3 Bespoke,3,"Profile file attributes (size, hash) on endpoint",,
+T1083,File and Directory Discovery,Discovery,1 Public,0,dir /s,,
+T1083,File and Directory Discovery,Discovery,2 Altered,2,Malware function for groups,https://www.forcepoint.com/sites/default/files/resources/files/forcepoint-security-labs-monsoon-analysis-report.pdf,
+T1083,File and Directory Discovery,Discovery,3 Bespoke,3,Custom filesystem driver,,
+T1087,Account Discovery,Discovery,1 Public,1,Account discovery commands associated with threat actor,,cli
+T1087,Account Discovery,Discovery,2 Altered,2,Different account discovery commands,,
+T1087,Account Discovery,Discovery,3 Bespoke,3,Target-specific account discovery,,
+T1090,Proxy,Command and Control,1 Public,1,Use public SOCKS proxies,https://www.bitdefender.com/files/News/CaseStudies/study/394/Bitdefender-PR-Whitepaper-BADHATCH-creat5237-en-EN.pdf,
+T1090,Proxy,Command and Control,2 Altered,2,Turn victim systems into proxies,https://www.us-cert.gov/sites/default/files/publications/MAR-10135536-F.pdf,
+T1090,Proxy,Command and Control,3 Bespoke,4,Use public CDNs with custom configuration,https://www.mandiant.com/resources/apt41-us-state-governments,
+T1091,Replication Through Removable Media,"Initial Access, Lateral Movement",1 Public,2,Known auto run malicious file,,
+T1091,Replication Through Removable Media,"Initial Access, Lateral Movement",2 Altered,3,Modified auto run,https://www.avira.com/en/blog/new-wave-of-plugx-targets-hong-kong,"Programming, os knowledge"
+T1091,Replication Through Removable Media,"Initial Access, Lateral Movement",3 Bespoke,4,Zero day removable device exploit,https://www.wired.com/images_blogs/threatlevel/2011/02/Symantec-Stuxnet-Update-Feb-2011.pdf,"OS internals, reverse engineering"
+T1092,Communication Through Removable Media,Command and Control,1 Public,2,Open source software for communicating over mass storage devices,,
+T1092,Communication Through Removable Media,Command and Control,2 Altered,3,Group-specific removeable media module,https://web.archive.org/web/20151022204649/https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-apt28.pdf,
+T1092,Communication Through Removable Media,Command and Control,3 Bespoke,4,Custom removable media,,advanced programming
+T1095,Non-Application Layer Protocol,Command and Control,1 Public,1,Raw netcat shells,,
+T1095,Non-Application Layer Protocol,Command and Control,2 Altered,2,ICMP to communicate,https://www.fireeye.com/blog/threat-research/2017/05/cyber-espionage-apt32.html,
+T1095,Non-Application Layer Protocol,Command and Control,3 Bespoke,3,Custom TCP Protocol,https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf,
+T1098,Account Manipulation,"Persistence, Privilege Escalation",1 Public,1,Known suspicious changes,https://www.us-cert.gov/ncas/alerts/TA18-074A,cli
+T1098,Account Manipulation,"Persistence, Privilege Escalation",2 Altered,2,Different forms of changes,,
+T1098,Account Manipulation,"Persistence, Privilege Escalation",3 Bespoke,3,Target-specific changes,,
+T1102,Web Service,Command and Control,1 Public,2,Pastebin for c2,https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity,
+T1102,Web Service,Command and Control,2 Altered,3,Custom AWS resources,https://www.clearskysec.com/wp-content/uploads/2020/12/Pay2Kitten.pdf,
+T1102,Web Service,Command and Control,3 Bespoke,4,Using legitimate chat software like teams or slack to match the target,https://unit42.paloaltonetworks.com/brute-ratel-c4-tool/,
+T1104,Multi-Stage Channels,Command and Control,1 Public,1,meterpreter staged payload,,
+T1104,Multi-Stage Channels,Command and Control,2 Altered,2,Multi-staged malware,https://blog.malwarebytes.com/threat-intelligence/2022/01/north-koreas-lazarus-apt-leverages-windows-update-client-github-in-latest-campaign/,
+T1104,Multi-Stage Channels,Command and Control,3 Bespoke,3,Different communication channels for each stage,https://blog.morphisec.com/revealing-the-snip3-crypter-a-highly-evasive-rat-loader,
+T1105,Ingress Tool Transfer,Command and Control,1 Public,1,Download via c2,,
+T1105,Ingress Tool Transfer,Command and Control,2 Altered,2,Download via basic URL,,
+T1105,Ingress Tool Transfer,Command and Control,3 Bespoke,3,Inject javascript onto websites to download payloads,https://www.volexity.com/blog/2017/11/06/oceanlotus-blossoms-mass-digital-surveillance-and-exploitation-of-asean-nations-the-media-human-rights-and-civil-society/,
+T1106,Native API,Execution,1 Public,2,Using simple API calls to evoke shell commands,https://research.checkpoint.com/2020/naikon-apt-cyber-espionage-reloaded/,
+T1106,Native API,Execution,2 Altered,3,Using API calls in a custom way,https://blogs.blackberry.com/en/2020/11/the-costaricto-campaign-cyber-espionage-outsourced,
+T1106,Native API,Execution,3 Bespoke,4,Using advanced API calls to directly achieve objectives and/or blending in with native application,,
+T1110,Brute Force,Credential Access,1 Public,1,Using known word lists,,scripting
+T1110,Brute Force,Credential Access,2 Altered,2,Using modified word list,,
+T1110,Brute Force,Credential Access,3 Bespoke,3,Massive cracking power,https://attack.mitre.org/docs/APT3_Adversary_Emulation_Plan.pdf,extreme level of compute
+T1111,Multi-Factor Authentication Interception,Credential Access,1 Public,2,Replay old tokens hoping for approval,https://www.microsoft.com/security/blog/2022/03/22/dev-0537-criminal-actor-targeting-organizations-for-data-exfiltration-and-destruction/,
+T1111,Multi-Factor Authentication Interception,Credential Access,2 Altered,3,Register alternate phone numbers for compromised users,https://research.nccgroup.com/2021/01/12/abusing-cloud-services-to-fly-under-the-radar/,
+T1111,Multi-Factor Authentication Interception,Credential Access,3 Bespoke,4,Custom collection to intercept soft tokens,https://www.fox-it.com/media/kadlze5c/201912_report_operation_wocao.pdf,
+T1112,Modify Registry,Defense Evasion,1 Public,0,Use cli tools to edit,https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/a/earth-lusca-employs-sophisticated-infrastructure-varied-tools-and-techniques/technical-brief-delving-deep-an-analysis-of-earth-lusca-operations.pdf,
+T1112,Modify Registry,Defense Evasion,2 Altered,1,Using APIs to edit,,
+T1112,Modify Registry,Defense Evasion,3 Bespoke,2,Using direct file access to edit,,
+T1113,Screen Capture,Collection,1 Public,2,Metasploit Screenspy,https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/post/windows/gather/screen_spy.md,
+T1113,Screen Capture,Collection,2 Altered,3,Plugin to capture screenshots,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Attor.pdf,
+T1113,Screen Capture,Collection,3 Bespoke,4,Custom tool that matches hash of known file,https://www.us-cert.gov/ncas/alerts/TA18-074A,
+T1114,Email Collection,Collection,1 Public,0,Email forwarding rule,https://us-cert.cisa.gov/ncas/alerts/aa20-301a,
+T1114,Email Collection,Collection,2 Altered,2,Logging in with compromised credentials and downloading data,https://blog.certfa.com/posts/charming-kitten-christmas-gift/,
+T1114,Email Collection,Collection,3 Bespoke,3,Emotet email collection module,https://www.cisecurity.org/white-papers/ms-isac-security-primer-emotet/,
+T1115,Clipboard Data,Collection,1 Public,0,Known commands that are suspicious,https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-200b,
+T1115,Clipboard Data,Collection,2 Altered,1,Renaming clipboard access tools,,
+T1115,Clipboard Data,Collection,3 Bespoke,2,Scraping memory for clipboard,,
+T1119,Automated Collection,Collection,1 Public,1,Known script to collect information,https://securingtomorrow.mcafee.com/mcafee-labs/hidden-cobra-targets-turkish-financial-sector-new-bankshot-implant/,
+T1119,Automated Collection,Collection,2 Altered,2,Custom configuration of script that looks at common OS locations,,
+T1119,Automated Collection,Collection,3 Bespoke,3,Custom script that looks at target-specific things,,
+T1120,Peripheral Device Discovery,Discovery,1 Public,1,fsutil fsinfo drives,https://www.cybereason.com/blog/operation-cuckoobees-deep-dive-into-stealthy-winnti-techniques,
+T1120,Peripheral Device Discovery,Discovery,2 Altered,2,Malware module for scanning,https://web-assets.esetstatic.com/wls/2016/05/Operation-Groundbait.pdf,
+T1120,Peripheral Device Discovery,Discovery,3 Bespoke,3,Look at software in use and check for hardware drivers,,
+T1123,Audio Capture,Collection,1 Public,1,Builtin tools to capture audio,https://github.com/PowerShellMafia/PowerSploit,
+T1123,Audio Capture,Collection,2 Altered,2,Custom tools to capture audio,https://www.fireeye.com/blog/threat-research/2018/03/suspected-chinese-espionage-group-targeting-maritime-and-engineering-industries.html,
+T1123,Audio Capture,Collection,3 Bespoke,3,Target-specific tools to capture audio,https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf,
+T1124,System Time Discovery,Discovery,1 Public,0,net time \\127.0.0.1,,
+T1124,System Time Discovery,Discovery,2 Altered,2,Use Windows APIs,https://www.welivesecurity.com/2018/11/20/sednit-whats-going-zebrocy/,
+T1124,System Time Discovery,Discovery,3 Bespoke,3,Blend in with remote traffic,,
+T1125,Video Capture,Collection,1 Public,2,Empire webcam module,https://github.com/PowerShellEmpire/Empire,
+T1125,Video Capture,Collection,2 Altered,3,Custom module,https://blog.360totalsecurity.com/en/apt-c-43-steals-venezuelan-military-secrets-to-provide-intelligence-support-for-the-reactionaries-hpreact-campaign/,
+T1125,Video Capture,Collection,3 Bespoke,4,Modifications to videoconferencing software,http://researchcenter.paloaltonetworks.com/2016/02/t9000-advanced-modular-backdoor-uses-complex-anti-analysis-techniques/,
+T1127,Trusted Developer Utilities Proxy Execution,Defense Evasion,1 Public,2,Modules that use MSBuild.exe,https://github.com/PowerShellEmpire/Empire,
+T1127,Trusted Developer Utilities Proxy Execution,Defense Evasion,2 Altered,3,Custom MSBuild command,https://blog.talosintelligence.com/2019/06/frankenstein-campaign.html,
+T1127,Trusted Developer Utilities Proxy Execution,Defense Evasion,3 Bespoke,4,Other novel use of developer utilities,,
+T1129,Shared Modules,Execution,1 Public,2,Public way of loading a dll,https://cybersecurity.att.com/blogs/labs-research/the-odd-case-of-a-gh0strat-variant,
+T1129,Shared Modules,Execution,2 Altered,3,Custom way of loading a dynamic library,,
+T1129,Shared Modules,Execution,3 Bespoke,4,One-off way of loading a dynamic library,,
+T1132,Data Encoding,Command and Control,1 Public,1,well known encoding like base64,,
+T1132,Data Encoding,Command and Control,2 Altered,2,modifications to well known encoding,https://securingtomorrow.mcafee.com/mcafee-labs/hidden-cobra-targets-turkish-financial-sector-new-bankshot-implant/,programming
+T1132,Data Encoding,Command and Control,3 Bespoke,3,Custom encoding sysytem,https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf,Data manipulation
+T1133,External Remote Services,"Initial Access, Persistence",1 Public,0,Log into external service from malicious ip address,,How to use the service
+T1133,External Remote Services,"Initial Access, Persistence",2 Altered,1,Log into external service from different IP address,,
+T1133,External Remote Services,"Initial Access, Persistence",3 Bespoke,2,Log into service from trusted ip address,,https://www.fox-it.com/media/kadlze5c/201912_report_operation_wocao.pdf
+T1134,Access Token Manipulation,"Defense Evasion, Privilege Escalation",1 Public,1,open source method of stealing tokens,https://github.com/PowerShellMafia/PowerSploit,
+T1134,Access Token Manipulation,"Defense Evasion, Privilege Escalation",2 Altered,2,Modified version of stealing/create tokens,https://www.fireeye.com/blog/threat-research/2019/04/pick-six-intercepting-a-fin6-intrusion.html,
+T1134,Access Token Manipulation,"Defense Evasion, Privilege Escalation",3 Bespoke,3,Custom method of manipulating/forging tokens,https://docs.google.com/document/d/1e9ZTW9b71YwFWS_18ZwDAxa-cYbV8q1wUefmKZLYVsA/edit#heading=h.lmnbtht1ikzm,"programming, knowledge of authentication"
+T1135,Network Share Discovery,Discovery,1 Public,0,net view \\remotesystem,https://www.bitdefender.com/files/News/CaseStudies/study/401/Bitdefender-PR-Whitepaper-FIN8-creat5619-en-EN.pdf,
+T1135,Network Share Discovery,Discovery,2 Altered,1,Custom call to NetShareEnum,,
+T1135,Network Share Discovery,Discovery,3 Bespoke,2,Custom tool that queries remote hosts,,
+T1136,Create Account,Persistence,1 Public,0,Known bad form of administration command,,
+T1136,Create Account,Persistence,2 Altered,1,Different form of administrator command,,
+T1136,Create Account,Persistence,3 Bespoke,2,Target-specific account creation,,target intelligence
+T1137,Office Application Startup,Persistence,1 Public,1,Known malicious method,https://github.com/sensepost/ruler,
+T1137,Office Application Startup,Persistence,2 Altered,2,Different form of malicious method,,
+T1137,Office Application Startup,Persistence,3 Bespoke,3,Novel office startup subtechnique,,Reverse-engineering
+T1140,Deobfuscate/Decode Files or Information,Defense Evasion,1 Public,1,Simple decoding like base64,,
+T1140,Deobfuscate/Decode Files or Information,Defense Evasion,2 Altered,2,Advanced decoding like using certutil,https://researchcenter.paloaltonetworks.com/2018/02/unit42-sofacy-attacks-multiple-government-entities/,
+T1140,Deobfuscate/Decode Files or Information,Defense Evasion,3 Bespoke,3,Custom decryption algorithm,https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf,
+T1176,Browser Extensions,Persistence,1 Public,0,Known bad extensions,https://www.intego.com/mac-security-blog/new-osxshlayer-malware-variant-found-using-a-dirty-new-trick/,
+T1176,Browser Extensions,Persistence,2 Altered,1,Modified bad extensions,,
+T1176,Browser Extensions,Persistence,3 Bespoke,2,New extension with hidden malicious content,https://www.zdnet.com/article/cyber-espionage-group-uses-chrome-extension-to-infect-victims/,Programming
+T1185,Browser Session Hijacking,Collection,1 Public,2,Known modules that inject into browsers,https://web.archive.org/web/20210825130434/https://cobaltstrike.com/downloads/csmanual38.pdf,
+T1185,Browser Session Hijacking,Collection,2 Altered,3,Custom browser modules to steal data,,
+T1185,Browser Session Hijacking,Collection,3 Bespoke,4,Custom web-injections into traffic from proxy,https://securelist.com/qakbot-technical-analysis/103931/,
+T1187,Forced Authentication,Credential Access,1 Public,2,Open login window for users to enter creds,https://researchcenter.paloaltonetworks.com/2018/08/unit42-darkhydrus-uses-phishery-harvest-credentials-middle-east/,
+T1187,Forced Authentication,Credential Access,2 Altered,3,LNK file icon with remote resource,https://www.us-cert.gov/ncas/alerts/TA17-293A,
+T1187,Forced Authentication,Credential Access,3 Bespoke,4,Custom resource embedded in a novel way,,
+T1189,Drive-by Compromise,Initial Access,1 Public,2,Using known client-side exploit,,
+T1189,Drive-by Compromise,Initial Access,2 Altered,3,Using altered client-side exploit,,
+T1189,Drive-by Compromise,Initial Access,3 Bespoke,4,Zero day exploit,http://download.ahnlab.com/global/brochure/%5BAnalysis%5DAndariel_Group.pdf,
+T1190,Exploit Public-Facing Application,Initial Access,1 Public,1,Using known exploit,,cli
+T1190,Exploit Public-Facing Application,Initial Access,2 Altered,2,altered form of known exploit,,scripting
+T1190,Exploit Public-Facing Application,Initial Access,3 Bespoke,3,Zero day exploit,,programming
+T1195,Supply Chain Compromise,Initial Access,1 Public,3,Inserting known malware into a software supply chain,,"social engineer, devops workflows"
+T1195,Supply Chain Compromise,Initial Access,2 Altered,4,Inserting custom malware into software supply chain,http://blog.talosintelligence.com/2017/09/avast-distributes-malware.html,advanced programming
+T1195,Supply Chain Compromise,Initial Access,3 Bespoke,5,target-specific attack through trusted supply chain,https://orangematter.solarwinds.com/2021/01/11/new-findings-from-our-investigation-of-sunburst/,yes
+T1197,BITS Jobs,"Defense Evasion, Persistence",1 Public,1,utility base modification of bits database,https://attack.mitre.org/software/S0190,
+T1197,BITS Jobs,"Defense Evasion, Persistence",2 Altered,2,Custom interaction with the bits database,https://www.intrinsec.com/egregor-prolock/?cn-reloaded=1,
+T1197,BITS Jobs,"Defense Evasion, Persistence",3 Bespoke,3,environment-specific way of interacting with bits,,
+T1199,Trusted Relationship,Initial Access,1 Public,2,Acquiring access through company with known bad associations,,
+T1199,Trusted Relationship,Initial Access,2 Altered,3,Acquiring access through company with no known bad associations,,
+T1199,Trusted Relationship,Initial Access,3 Bespoke,4,Acquiring access through company with known good associations,https://www.microsoft.com/security/blog/2022/06/02/exposing-polonium-activity-and-infrastructure-targeting-israeli-organizations/,
+T1200,Hardware Additions,Initial Access,1 Public,3,Known hacker hardware like rubber ducky,,Physical access
+T1200,Hardware Additions,Initial Access,2 Altered,4,,,Hardware modding knowledge
+T1200,Hardware Additions,Initial Access,3 Bespoke,5,,,Hardware modding and target intelligence
+T1201,Password Policy Discovery,Discovery,1 Public,0,Get-ADDefaultDomainPasswordPolicy,,
+T1201,Password Policy Discovery,Discovery,2 Altered,1,CrackMapExec,https://github.com/byt3bl33d3r/CrackMapExec/wiki/SMB-Command-Reference,
+T1201,Password Policy Discovery,Discovery,3 Bespoke,3,Asking someone at the company,,
+T1202,Indirect Command Execution,Defense Evasion,1 Public,1,forfiles,https://twitter.com/vector_sec/status/896049052642533376,
+T1202,Indirect Command Execution,Defense Evasion,2 Altered,2,Windows subsystem for Linux invokations,,
+T1202,Indirect Command Execution,Defense Evasion,3 Bespoke,3,Other novel indirect execution,,
+T1203,Exploitation for Client Execution,Execution,1 Public,2,known exploits,,
+T1203,Exploitation for Client Execution,Execution,2 Altered,3,altered form of known exploit,,
+T1203,Exploitation for Client Execution,Execution,3 Bespoke,4,Zero day exploit,,
+T1204,User Execution,Execution,1 Public,0,Telling someone to execute a command,,
+T1204,User Execution,Execution,2 Altered,1,Obfuscating the command you tell someone to run,https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-320a,
+T1204,User Execution,Execution,3 Bespoke,2,Putting a file for execution in an org-specific place it will be executed,,
+T1205,Traffic Signaling,"Command and Control, Defense Evasion, Persistence",1 Public,2,Wake on LAN,https://www.bleepingcomputer.com/news/security/ryuk-ransomware-uses-wake-on-lan-to-encrypt-offline-devices/,
+T1205,Traffic Signaling,"Command and Control, Defense Evasion, Persistence",2 Altered,3,Reverse shell triggered by specific packets,http://gosecure.net/2018/02/14/chaos-stolen-backdoor-rising/,
+T1205,Traffic Signaling,"Command and Control, Defense Evasion, Persistence",3 Bespoke,4,Unique Magic byte sequence,https://www.mandiant.com/resources/blog/investigating-ivanti-exploitation-persistence,
+T1207,Rogue Domain Controller,Defense Evasion,1 Public,3,Mimikatz LSADUMP::DCShadow,https://github.com/gentilkiwi/mimikatz,
+T1207,Rogue Domain Controller,Defense Evasion,2 Altered,4,Altering mimikatz,,
+T1207,Rogue Domain Controller,Defense Evasion,3 Bespoke,5,Other novel way of promoting DC,,
+T1210,Exploitation of Remote Services,Lateral Movement,1 Public,2,Known exploit,https://web-assets.esetstatic.com/wls/2020/06/ESET_InvisiMole.pdf,
+T1210,Exploitation of Remote Services,Lateral Movement,2 Altered,3,Adaptations of known exploits,,
+T1210,Exploitation of Remote Services,Lateral Movement,3 Bespoke,4,Zero day exploit,,
+T1211,Exploitation for Defense Evasion,Defense Evasion,1 Public,2,Public exploit code,,
+T1211,Exploitation for Defense Evasion,Defense Evasion,2 Altered,3,altered form of public code,,
+T1211,Exploitation for Defense Evasion,Defense Evasion,3 Bespoke,4,Zero day exploit,https://download.bitdefender.com/resources/media/materials/white-papers/en/Bitdefender_In-depth_analysis_of_APT28%E2%80%93The_Political_Cyber-Espionage.pdf,
+T1212,Exploitation for Credential Access,Credential Access,1 Public,2,Known exploit,https://adsecurity.org/?p=1515,"cli, application of authentication mechanism"
+T1212,Exploitation for Credential Access,Credential Access,2 Altered,3,Known exploit that requires some target knowledge,https://www.bugcrowd.com/glossary/replay-attack/,"packet capture, scripting, application knowledge"
+T1212,Exploitation for Credential Access,Credential Access,3 Bespoke,4,Zero day exploit,,exploit development
+T1213,Data from Information Repositories,Collection,1 Public,1,Web / database scrapers,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf,cli ability
+T1213,Data from Information Repositories,Collection,2 Altered,2,Modified scrapers to look for data of interest,,basic programming (scripting)
+T1213,Data from Information Repositories,Collection,3 Bespoke,3,Custom scraper for a target,,advanced programming
+T1216,System Script Proxy Execution,Defense Evasion,1 Public,2,Well known invocation of lolbin,https://enigma0x3.net/2017/08/03/wsh-injection-a-case-study/,
+T1216,System Script Proxy Execution,Defense Evasion,2 Altered,3,Changing how the lolbin is called,https://twitter.com/ItsReallyNick/status/944321013084573697,
+T1216,System Script Proxy Execution,Defense Evasion,3 Bespoke,4,Novel way of proxying script execution,,
+T1217,Browser Information Discovery,Discovery,1 Public,1,open source method,https://github.com/PowerShellEmpire/Empire,
+T1217,Browser Information Discovery,Discovery,2 Altered,2,Custom filesystem enumeration command,https://research.nccgroup.com/2021/01/12/abusing-cloud-services-to-fly-under-the-radar/,
+T1217,Browser Information Discovery,Discovery,3 Bespoke,3,Novel malware payload,https://www.cybereason.com/blog/research/powerless-trojan-iranian-apt-phosphorus-adds-new-powershell-backdoor-for-espionage,
+T1218,System Binary Proxy Execution,Defense Evasion,1 Public,1,Invokation of binary to exec script,,
+T1218,System Binary Proxy Execution,Defense Evasion,2 Altered,2,Different way of calling binary,,
+T1218,System Binary Proxy Execution,Defense Evasion,3 Bespoke,4,Novel binary to call for proxy execution,,
+T1219,Remote Access Software,Command and Control,1 Public,0,Log in via ssh,,
+T1219,Remote Access Software,Command and Control,2 Altered,2,Install teamviewer on target,https://thedfirreport.com/2021/11/29/continuing-the-bazar-ransomware-story/,
+T1219,Remote Access Software,Command and Control,3 Bespoke,3,Custom malware module,https://www.welivesecurity.com/2020/10/12/eset-takes-part-global-operation-disrupt-trickbot/,
+T1220,XSL Script Processing,Defense Evasion,1 Public,1,Well-known calling of msxsl.exe,,
+T1220,XSL Script Processing,Defense Evasion,2 Altered,2,Different way of calling msxsl.exe,,
+T1220,XSL Script Processing,Defense Evasion,3 Bespoke,4,Novel way of calling xsl scripts,,
+T1221,Template Injection,Defense Evasion,1 Public,2,Open source injection tool,https://github.com/ryhanson/phishery,
+T1221,Template Injection,Defense Evasion,2 Altered,3,RTF injection,https://www.uptycs.com/blog/threat-research-report-team/confucius-apt-deploys-warzone-rat,
+T1221,Template Injection,Defense Evasion,3 Bespoke,4,Novel method of packing templates,https://www.clearskysec.com/wp-content/uploads/2020/08/Dream-Job-Campaign.pdf,
+T1222,File and Directory Permissions Modification,Defense Evasion,1 Public,0,Known malware method of modifiying permissions,,
+T1222,File and Directory Permissions Modification,Defense Evasion,2 Altered,1,Altered form of modifying permissions,,
+T1222,File and Directory Permissions Modification,Defense Evasion,3 Bespoke,2,Novel way of modifying permissions,,
+T1480,Execution Guardrails,Defense Evasion,1 Public,2,Specific execution flags,https://www.cybereason.com/blog/dropping-anchor-from-a-trickbot-infection-to-the-discovery-of-the-anchor-malware,
+T1480,Execution Guardrails,Defense Evasion,2 Altered,3,Per target alterations of payloads,https://www.trellix.com/blogs/research/the-continued-evolution-of-the-darkgate-malware-as-a-service/,
+T1480,Execution Guardrails,Defense Evasion,3 Bespoke,4,Environment specific checks,https://www.wired.com/images_blogs/threatlevel/2011/02/Symantec-Stuxnet-Update-Feb-2011.pdf,
+T1482,Domain Trust Discovery,Discovery,1 Public,1,open source method,https://github.com/PowerShellEmpire/Empire,cli
+T1482,Domain Trust Discovery,Discovery,2 Altered,2,Custom filesystem enumeration command,https://posts.specterops.io/a-guide-to-attacking-domain-trusts-971e52cb2944,
+T1482,Domain Trust Discovery,Discovery,3 Bespoke,3,Novel malware payload,https://github.com/nettitude/PoshC2_Python,
+T1484,Domain or Tenant Policy Modification,"Defense Evasion, Privilege Escalation",1 Public,2,GPO to push known TTP,https://wald0.com/?p=179,
+T1484,Domain or Tenant Policy Modification,"Defense Evasion, Privilege Escalation",2 Altered,3,Changing settings for new trust or DC,,
+T1484,Domain or Tenant Policy Modification,"Defense Evasion, Privilege Escalation",3 Bespoke,4,Modifying a policy to blend in with environment,,
+T1485,Data Destruction,Impact,1 Public,-1,,,
+T1485,Data Destruction,Impact,2 Altered,-1,,,
+T1485,Data Destruction,Impact,3 Bespoke,-1,,,
+T1486,Data Encrypted for Impact,Impact,1 Public,-1,,,
+T1486,Data Encrypted for Impact,Impact,2 Altered,-1,,,
+T1486,Data Encrypted for Impact,Impact,3 Bespoke,-1,,,
+T1489,Service Stop,Impact,1 Public,-1,,,
+T1489,Service Stop,Impact,2 Altered,-1,,,
+T1489,Service Stop,Impact,3 Bespoke,-1,,,
+T1490,Inhibit System Recovery,Impact,1 Public,-1,,,
+T1490,Inhibit System Recovery,Impact,2 Altered,-1,,,
+T1490,Inhibit System Recovery,Impact,3 Bespoke,-1,,,
+T1491,Defacement,Impact,1 Public,-1,,,
+T1491,Defacement,Impact,2 Altered,-1,,,
+T1491,Defacement,Impact,3 Bespoke,-1,,,
+T1495,Firmware Corruption,Impact,1 Public,-1,,,
+T1495,Firmware Corruption,Impact,2 Altered,-1,,,
+T1495,Firmware Corruption,Impact,3 Bespoke,-1,,,
+T1496,Resource Hijacking,Impact,1 Public,-1,,,
+T1496,Resource Hijacking,Impact,2 Altered,-1,,,
+T1496,Resource Hijacking,Impact,3 Bespoke,-1,,,
+T1497,Virtualization/Sandbox Evasion,"Defense Evasion, Discovery",1 Public,1,Query OS for hardware data,https://researchcenter.paloaltonetworks.com/2017/10/unit42-badpatch/,
+T1497,Virtualization/Sandbox Evasion,"Defense Evasion, Discovery",2 Altered,2,Check for user activity like mouse movements,https://www.welivesecurity.com/wp-content/uploads/2019/07/ESET_Okrum_and_Ketrican.pdf,
+T1497,Virtualization/Sandbox Evasion,"Defense Evasion, Discovery",3 Bespoke,4,Novel Behavior checks or overloading system calls to confuse debuggers,https://www.welivesecurity.com/2020/04/28/grandoreiro-how-engorged-can-exe-get/,
+T1498,Network Denial of Service,Impact,1 Public,-1,,,
+T1498,Network Denial of Service,Impact,2 Altered,-1,,,
+T1498,Network Denial of Service,Impact,3 Bespoke,-1,,,
+T1499,Endpoint Denial of Service,Impact,1 Public,-1,,,
+T1499,Endpoint Denial of Service,Impact,2 Altered,-1,,,
+T1499,Endpoint Denial of Service,Impact,3 Bespoke,-1,,,
+T1505,Server Software Component,Persistence,1 Public,1,Known malicious software components,https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf,cli
+T1505,Server Software Component,Persistence,2 Altered,2,Modified malicious software components,,scripting
+T1505,Server Software Component,Persistence,3 Bespoke,3,New components with malicious capabilities,,programming
+T1518,Software Discovery,Discovery,1 Public,1,cmd.exe WMIC /Node:localhost /Namespace:\\root\SecurityCenter2 Path AntiVirusProduct Get displayName /Format:List,https://www.malwarebytes.com/blog/news/2021/12/sidecopy-apt-connecting-lures-to-victims-payloads-to-infrastructure,
+T1518,Software Discovery,Discovery,2 Altered,2,Query registry for installed applications,https://www.cybereason.com/blog/a-bazar-of-tricks-following-team9s-development-cycles,
+T1518,Software Discovery,Discovery,3 Bespoke,3,Novel way of inferring software from registry or file system,,
+T1525,Implant Internal Image,Persistence,1 Public,2,Open source implant toolkit,https://github.com/RhinoSecurityLabs/ccat,Scripting
+T1525,Implant Internal Image,Persistence,2 Altered,3,modified implant method,,
+T1525,Implant Internal Image,Persistence,3 Bespoke,4,Target-specific implant method,,"Prgramming, target knowledge"
+T1526,Cloud Service Discovery,Discovery,1 Public,1,open source method,https://aadinternals.com/aadinternals/,
+T1526,Cloud Service Discovery,Discovery,2 Altered,2,Custom filesystem enumeration command,,
+T1526,Cloud Service Discovery,Discovery,3 Bespoke,3,Novel malware payload,,
+T1528,Steal Application Access Token,Credential Access,1 Public,2,Dumping of tokens abusing existingi access,https://www.inguardians.com/peirates/,
+T1528,Steal Application Access Token,Credential Access,2 Altered,3,Register custom OAuth application,https://blog.trendmicro.com/trendlabs-security-intelligence/pawn-storm-abuses-open-authentication-advanced-social-engineering-attacks,
+T1528,Steal Application Access Token,Credential Access,3 Bespoke,4,Environment-specific token compromise,,
+T1529,System Shutdown/Reboot,Impact,1 Public,-1,,,
+T1529,System Shutdown/Reboot,Impact,2 Altered,-1,,,
+T1529,System Shutdown/Reboot,Impact,3 Bespoke,-1,,,
+T1530,Data from Cloud Storage,Collection,1 Public,1,Mass Scrapers,https://aadinternals.com/aadinternals/,cli ability
+T1530,Data from Cloud Storage,Collection,2 Altered,2,Modified scrapers to look for data of interest,https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-320a,basic programming (scripting)
+T1530,Data from Cloud Storage,Collection,3 Bespoke,3,Custom scraper for a cloud storage location,,advanced programming
+T1531,Account Access Removal,Impact,1 Public,-1,,,
+T1531,Account Access Removal,Impact,2 Altered,-1,,,
+T1531,Account Access Removal,Impact,3 Bespoke,-1,,,
+T1534,Internal Spearphishing,Lateral Movement,1 Public,1,Known ruses,,Social engineering
+T1534,Internal Spearphishing,Lateral Movement,2 Altered,1,Altered forms of known phish templates,,Social engineering
+T1534,Internal Spearphishing,Lateral Movement,3 Bespoke,2,Target-specific messages,,"Social engineering, target information"
+T1535,Unused/Unsupported Cloud Regions,Defense Evasion,1 Public,3,Deploying resources in a region with lower logging thresholds,,Needs a lot of knowledge of the target
+T1535,Unused/Unsupported Cloud Regions,Defense Evasion,2 Altered,3,Deploying resources in a region with lower logging thresholds,,
+T1535,Unused/Unsupported Cloud Regions,Defense Evasion,3 Bespoke,4,Deploying in a region that specifically avoids this target's monitoring,,
+T1537,Transfer Data to Cloud Account,Exfiltration,1 Public,1,Using known bad cloud account,,cli
+T1537,Transfer Data to Cloud Account,Exfiltration,2 Altered,2,Using different cloud account,,scripting
+T1537,Transfer Data to Cloud Account,Exfiltration,3 Bespoke,3,Using cloud account that is trusted by target environment,,"target information, scripting"
+T1538,Cloud Service Dashboard,Discovery,1 Public,0,Log in with valid credentials,,web browsing
+T1538,Cloud Service Dashboard,Discovery,2 Altered,1,Log in matching pattern of existing accounts,,
+T1538,Cloud Service Dashboard,Discovery,3 Bespoke,2,Log in from existing computer,,
+T1539,Steal Web Session Cookie,Credential Access,1 Public,2,Man-in-the-middle proxy,https://github.com/kgretzky/evilginx2,
+T1539,Steal Web Session Cookie,Credential Access,2 Altered,3,Steal cookies from disk,https://unit42.paloaltonetworks.com/mac-malware-steals-cryptocurrency-exchanges-cookies/,
+T1539,Steal Web Session Cookie,Credential Access,3 Bespoke,4,Zero day browser exploit,https://www.volexity.com/blog/2021/08/17/north-korean-apt-inkysquid-infects-victims-using-browser-exploits/,
+T1542,Pre-OS Boot,"Defense Evasion, Persistence",1 Public,3,MBR bootkit,https://www.fireeye.com/blog/threat-research/2015/12/fin1-targets-boot-record.html,
+T1542,Pre-OS Boot,"Defense Evasion, Persistence",2 Altered,4,Custom UEFI Firmware,,
+T1542,Pre-OS Boot,"Defense Evasion, Persistence",3 Bespoke,5,Custom component firmware,https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08064459/Equation_group_questions_and_answers.pdf,
+T1543,Create or Modify System Process,"Persistence, Privilege Escalation",1 Public,1,Known malicious service,,
+T1543,Create or Modify System Process,"Persistence, Privilege Escalation",2 Altered,2,Altered malicious service,https://dragos.com/blog/crashoverride/CrashOverride-01.pdf,
+T1543,Create or Modify System Process,"Persistence, Privilege Escalation",3 Bespoke,3,Modify environment-specific service,,
+T1546,Event Triggered Execution,"Persistence, Privilege Escalation",1 Public,1,Known malicious event trigger,,
+T1546,Event Triggered Execution,"Persistence, Privilege Escalation",2 Altered,2,Altered form of known malicious trigger,https://github.com/RhinoSecurityLabs/pacu,Cloud scripting
+T1546,Event Triggered Execution,"Persistence, Privilege Escalation",3 Bespoke,3,Novel method of event triggering,,
+T1547,Boot or Logon Autostart Execution,"Persistence, Privilege Escalation",1 Public,1,Known malicious startup task,https://www.fireeye.com/blog/threat-research/2020/03/apt41-initiates-global-intrusion-campaign-using-multiple-exploits.html,
+T1547,Boot or Logon Autostart Execution,"Persistence, Privilege Escalation",2 Altered,2,Altered form of malicious startup task,,
+T1547,Boot or Logon Autostart Execution,"Persistence, Privilege Escalation",3 Bespoke,3,Novel method of auto start task,,
+T1548,Abuse Elevation Control Mechanism,"Defense Evasion, Privilege Escalation",1 Public,1,Known elevation bypass,https://web.archive.org/web/20210825130434/https://cobaltstrike.com/downloads/csmanual38.pdf,Scripting
+T1548,Abuse Elevation Control Mechanism,"Defense Evasion, Privilege Escalation",2 Altered,2,Altered form of bypass,,
+T1548,Abuse Elevation Control Mechanism,"Defense Evasion, Privilege Escalation",3 Bespoke,3,Novel elevation mechanism,http://www.slideshare.net/MatthewDunwoody1/no-easy-breach-derby-con-2016,
+T1550,Use Alternate Authentication Material,"Defense Evasion, Lateral Movement",1 Public,2,pass the hash,,
+T1550,Use Alternate Authentication Material,"Defense Evasion, Lateral Movement",2 Altered,3,pass the ticket,https://cdn2.hubspot.net/hubfs/3354902/Cybereason%20Labs%20Analysis%20Operation%20Cobalt%20Kitty.pdf,
+T1550,Use Alternate Authentication Material,"Defense Evasion, Lateral Movement",3 Bespoke,4,Forged SAML token,https://www.microsoft.com/security/blog/2020/12/28/using-microsoft-365-defender-to-coordinate-protection-against-solorigate/,
+T1552,Unsecured Credentials,Credential Access,1 Public,1,Group policy preferences,https://github.com/PowerShellMafia/PowerSploit,Still requires some enumeration/scripting
+T1552,Unsecured Credentials,Credential Access,2 Altered,2,Search chat history or code repositories,https://www.microsoft.com/security/blog/2022/03/22/dev-0537-criminal-actor-targeting-organizations-for-data-exfiltration-and-destruction/,
+T1552,Unsecured Credentials,Credential Access,3 Bespoke,3,Custom API queries,,
+T1553,Subvert Trust Controls,Defense Evasion,1 Public,2,Using something like .iso files to avoid mark-of-the-web,https://www.trendmicro.com/en_us/research/19/h/ta505-at-it-again-variety-is-the-spice-of-servhelper-and-flawedammyy.html,
+T1553,Subvert Trust Controls,Defense Evasion,2 Altered,3,Installing root certificate that you control,,
+T1553,Subvert Trust Controls,Defense Evasion,3 Bespoke,4,Using signature known to be trusted by application white listing,,
+T1554,Compromise Host Software Binary,Persistence,1 Public,2,Known trojan template,,scripting
+T1554,Compromise Host Software Binary,Persistence,2 Altered,3,Altered trojan template,,programming
+T1554,Compromise Host Software Binary,Persistence,3 Bespoke,4,Target-specific binary modifications,,"programming, target intelligence"
+T1555,Credentials from Password Stores,Credential Access,1 Public,1,Grabbing files from known password stores with OS tools,https://github.com/gentilkiwi/mimikatz,cli
+T1555,Credentials from Password Stores,Credential Access,2 Altered,2,Grabbing files with altered tools,https://github.com/AlessandroZ/LaZagne,basic programming (scripting)
+T1555,Credentials from Password Stores,Credential Access,3 Bespoke,3,Searching custom password stores,,"basic programming, information gathering"
+T1556,Modify Authentication Process,"Credential Access, Defense Evasion, Persistence",1 Public,2,trojanized function in known way,https://www.welivesecurity.com/2014/02/21/an-in-depth-analysis-of-linuxebury/,
+T1556,Modify Authentication Process,"Credential Access, Defense Evasion, Persistence",2 Altered,3,trojanized function in different way,,
+T1556,Modify Authentication Process,"Credential Access, Defense Evasion, Persistence",3 Bespoke,4,novel method of hooking authentication,https://securelist.com/files/2016/07/The-ProjectSauron-APT_research_KL.pdf,
+T1557,Adversary-in-the-Middle,"Collection, Credential Access",1 Public,2,cache poisoning,https://www.bitdefender.com/blog/labs/luminousmoth-plugx-file-exfiltration-and-persistence-revisited,solid networking knowledge
+T1557,Adversary-in-the-Middle,"Collection, Credential Access",2 Altered,3,actively altering network / proxy infrastrcuture,https://objective-see.org/blog/blog_0x25.html,advanced networking
+T1557,Adversary-in-the-Middle,"Collection, Credential Access",3 Bespoke,4,Custom resources embedded in the network,,
+T1558,Steal or Forge Kerberos Tickets,Credential Access,1 Public,2,Kerberoasting,https://attack.mitre.org/techniques/T1558/003/,
+T1558,Steal or Forge Kerberos Tickets,Credential Access,2 Altered,3,Golden ticket,https://attack.mitre.org/techniques/T1558/001/,
+T1558,Steal or Forge Kerberos Tickets,Credential Access,3 Bespoke,4,Kerberos zero day weakness,,
+T1559,Inter-Process Communication,Execution,1 Public,2,Open source IPC abuse,,Scripting
+T1559,Inter-Process Communication,Execution,2 Altered,3,Altered form of IPC,,Programming
+T1559,Inter-Process Communication,Execution,3 Bespoke,4,Novel form of IPC,,OS internals
+T1560,Archive Collected Data,Collection,1 Public,1,Archive via utility,https://www.secureworks.com/research/threat-profiles/gold-sahara,cli knowledge
+T1560,Archive Collected Data,Collection,2 Altered,2,Archive via Library,https://securelist.com/use-of-dns-tunneling-for-cc-communications/78203/,basic programming (scripting)
+T1560,Archive Collected Data,Collection,3 Bespoke,3,Archive via custom method,http://blog.threatexpert.com/2008/11/agentbtz-threat-that-hit-pentagon.html,advanced programming
+T1561,Disk Wipe,Impact,1 Public,-1,,,
+T1561,Disk Wipe,Impact,2 Altered,-1,,,
+T1561,Disk Wipe,Impact,3 Bespoke,-1,,,
+T1562,Impair Defenses,Defense Evasion,1 Public,1,Disable logging,https://www.secureworks.com/research/bronze-union,Scripting
+T1562,Impair Defenses,Defense Evasion,2 Altered,2,Disable other service that might detect malware,,"Scripting, environment knowledge"
+T1562,Impair Defenses,Defense Evasion,3 Bespoke,3,Modify system in a target-specific method,,
+T1563,Remote Service Session Hijacking,Lateral Movement,1 Public,1,Known commands that are suspicious,https://logrhythm.com/blog/a-technical-analysis-of-wannacry-ransomware/,cli
+T1563,Remote Service Session Hijacking,Lateral Movement,2 Altered,2,Altered commands from suspicious,,
+T1563,Remote Service Session Hijacking,Lateral Movement,3 Bespoke,3,Target-specific enumeration of sessions,,
+T1564,Hide Artifacts,Defense Evasion,1 Public,1,Known hiding methods ,https://cdn2.hubspot.net/hubfs/3354902/Cybereason%20Labs%20Analysis%20Operation%20Cobalt%20Kitty.pdf,"cli, basic scripting"
+T1564,Hide Artifacts,Defense Evasion,2 Altered,2,Tweaked versions of known methods,https://www.secureworks.com/research/darktortilla-malware-analysis,
+T1564,Hide Artifacts,Defense Evasion,3 Bespoke,3,Novel method of hiding,,
+T1565,Data Manipulation,Impact,1 Public,-1,,,
+T1565,Data Manipulation,Impact,2 Altered,-1,,,
+T1565,Data Manipulation,Impact,3 Bespoke,-1,,,
+T1566,Phishing,Initial Access,1 Public,0,Known templates and scams,,email
+T1566,Phishing,Initial Access,2 Altered,0,Altered templates,,
+T1566,Phishing,Initial Access,3 Bespoke,1,Target-specific email,,target knowledge
+T1567,Exfiltration Over Web Service,Exfiltration,1 Public,1,Using known bad web service or account,,
+T1567,Exfiltration Over Web Service,Exfiltration,2 Altered,2,Using different service or account,,
+T1567,Exfiltration Over Web Service,Exfiltration,3 Bespoke,3,Using target-specific service or account,,
+T1568,Dynamic Resolution,Command and Control,1 Public,2,technique like domain name generation,,"programming, dns knowledge"
+T1568,Dynamic Resolution,Command and Control,2 Altered,2,Modifications to known algorithm,,"programming, dns knowledge"
+T1568,Dynamic Resolution,Command and Control,3 Bespoke,3,Custom own DGA algorithm,,advanced programming
+T1569,System Services,Execution,1 Public,1,Using psexec to execute a service,https://github.com/PowerShellEmpire/Empire,
+T1569,System Services,Execution,2 Altered,2,Calling psexec in a different way,https://research.nccgroup.com/2021/01/12/abusing-cloud-services-to-fly-under-the-radar/,
+T1569,System Services,Execution,3 Bespoke,3,"Modify custom, pre-existing service",,
+T1570,Lateral Tool Transfer,Lateral Movement,1 Public,1,Known commands that are suspicious,,
+T1570,Lateral Tool Transfer,Lateral Movement,2 Altered,2,Altered commands from suspicious,,
+T1570,Lateral Tool Transfer,Lateral Movement,3 Bespoke,3,Target-specific transfer commands,,
+T1571,Non-Standard Port,Command and Control,1 Public,1,Using port associated with malware like 4444,,scripting
+T1571,Non-Standard Port,Command and Control,2 Altered,2,Using another random port,,"scripting, networking"
+T1571,Non-Standard Port,Command and Control,3 Bespoke,3,Using a port that is specific to application present on system,,advanced intelligence
+T1572,Protocol Tunneling,Command and Control,1 Public,2,SSH Tunneling,https://www2.fireeye.com/rs/848-DID-242/images/rpt-fin6.pdf,
+T1572,Protocol Tunneling,Command and Control,2 Altered,3,DNS Tunneling,https://vblocalhost.com/uploads/VB2021-Kayal-etal.pdf,
+T1572,Protocol Tunneling,Command and Control,3 Bespoke,4,Tunnel through another protocol in a novel way,https://f.hubspotusercontent30.net/hubfs/8776530/Sygnia-%20Elephant%20Beetle_Jan2022.pdf?__hstc=147695848.3e8f1a482c8f8d4531507747318e660b.1680005306711.1680005306711.1680005306711.1&__hssc=147695848.1.1680005306711&__hsfp=3000179024&hsCtaTracking=189ec409-ae2d-4909-8bf1-62dcdd694372%7Cca91d317-8f10-4a38-9f80-367f551ad64d,
+T1573,Encrypted Channel,Command and Control,1 Public,2,Public algorithm with static key,http://cdn0.vox-cdn.com/assets/4589853/crowdstrike-intelligence-report-putter-panda.original.pdf,
+T1573,Encrypted Channel,Command and Control,2 Altered,3,Secure implementation of public algorithm,https://research.checkpoint.com/2020/bandook-signed-delivered/,
+T1573,Encrypted Channel,Command and Control,3 Bespoke,4,Custom algorithm,http://researchcenter.paloaltonetworks.com/2015/12/bbsrat-attacks-targeting-russian-organizations-linked-to-roaming-tiger/,"advanced programming, cryptography"
+T1574,Hijack Execution Flow,"Defense Evasion, Persistence, Privilege Escalation",1 Public,1,Known hijacking implementation,,
+T1574,Hijack Execution Flow,"Defense Evasion, Persistence, Privilege Escalation",2 Altered,2,Altered hijacking implementation,https://www.fireeye.com/blog/threat-research/2014/04/new-zero-day-exploit-targeting-internet-explorer-versions-9-through-11-identified-in-targeted-attacks.html,
+T1574,Hijack Execution Flow,"Defense Evasion, Persistence, Privilege Escalation",3 Bespoke,3,Bespoke OS hijacking,https://www.microsoft.com/security/blog/2018/03/01/finfisher-exposed-a-researchers-tale-of-defeating-traps-tricks-and-complex-virtual-machines/,OS internals
+T1578,Modify Cloud Compute Infrastructure,Defense Evasion,1 Public,2,Known cloud modifications,,
+T1578,Modify Cloud Compute Infrastructure,Defense Evasion,2 Altered,3,Different cloud modifications,,
+T1578,Modify Cloud Compute Infrastructure,Defense Evasion,3 Bespoke,4,environment-specific additions or modifications,https://www.microsoft.com/security/blog/2022/03/22/dev-0537-criminal-actor-targeting-organizations-for-data-exfiltration-and-destruction/,"Environment knowledge, cloud administration"
+T1580,Cloud Infrastructure Discovery,Discovery,1 Public,1,Open source tools,,
+T1580,Cloud Infrastructure Discovery,Discovery,2 Altered,2,Custom API queries,,
+T1580,Cloud Infrastructure Discovery,Discovery,3 Bespoke,3,Searching target information repositories,,
+T1583,Acquire Infrastructure,Resource Development,1 Public,-1,,,
+T1583,Acquire Infrastructure,Resource Development,2 Altered,-1,,,
+T1583,Acquire Infrastructure,Resource Development,3 Bespoke,-1,,,
+T1584,Compromise Infrastructure,Resource Development,1 Public,-1,,,
+T1584,Compromise Infrastructure,Resource Development,2 Altered,-1,,,
+T1584,Compromise Infrastructure,Resource Development,3 Bespoke,-1,,,
+T1585,Establish Accounts,Resource Development,1 Public,-1,,,
+T1585,Establish Accounts,Resource Development,2 Altered,-1,,,
+T1585,Establish Accounts,Resource Development,3 Bespoke,-1,,,
+T1586,Compromise Accounts,Resource Development,1 Public,-1,,,
+T1586,Compromise Accounts,Resource Development,2 Altered,-1,,,
+T1586,Compromise Accounts,Resource Development,3 Bespoke,-1,,,
+T1587,Develop Capabilities,Resource Development,1 Public,-1,,,
+T1587,Develop Capabilities,Resource Development,2 Altered,-1,,,
+T1587,Develop Capabilities,Resource Development,3 Bespoke,-1,,,
+T1588,Obtain Capabilities,Resource Development,1 Public,-1,,,
+T1588,Obtain Capabilities,Resource Development,2 Altered,-1,,,
+T1588,Obtain Capabilities,Resource Development,3 Bespoke,-1,,,
+T1589,Gather Victim Identity Information,Reconnaissance,1 Public,-1,,,
+T1589,Gather Victim Identity Information,Reconnaissance,2 Altered,-1,,,
+T1589,Gather Victim Identity Information,Reconnaissance,3 Bespoke,-1,,,
+T1590,Gather Victim Network Information,Reconnaissance,1 Public,-1,,,
+T1590,Gather Victim Network Information,Reconnaissance,2 Altered,-1,,,
+T1590,Gather Victim Network Information,Reconnaissance,3 Bespoke,-1,,,
+T1591,Gather Victim Org Information,Reconnaissance,1 Public,-1,,,
+T1591,Gather Victim Org Information,Reconnaissance,2 Altered,-1,,,
+T1591,Gather Victim Org Information,Reconnaissance,3 Bespoke,-1,,,
+T1592,Gather Victim Host Information,Reconnaissance,1 Public,-1,,,
+T1592,Gather Victim Host Information,Reconnaissance,2 Altered,-1,,,
+T1592,Gather Victim Host Information,Reconnaissance,3 Bespoke,-1,,,
+T1593,Search Open Websites/Domains,Reconnaissance,1 Public,-1,,,
+T1593,Search Open Websites/Domains,Reconnaissance,2 Altered,-1,,,
+T1593,Search Open Websites/Domains,Reconnaissance,3 Bespoke,-1,,,
+T1594,Search Victim-Owned Websites,Reconnaissance,1 Public,-1,,,
+T1594,Search Victim-Owned Websites,Reconnaissance,2 Altered,-1,,,
+T1594,Search Victim-Owned Websites,Reconnaissance,3 Bespoke,-1,,,
+T1595,Active Scanning,Reconnaissance,1 Public,-1,,,
+T1595,Active Scanning,Reconnaissance,2 Altered,-1,,,
+T1595,Active Scanning,Reconnaissance,3 Bespoke,-1,,,
+T1596,Search Open Technical Databases,Reconnaissance,1 Public,-1,,,
+T1596,Search Open Technical Databases,Reconnaissance,2 Altered,-1,,,
+T1596,Search Open Technical Databases,Reconnaissance,3 Bespoke,-1,,,
+T1597,Search Closed Sources,Reconnaissance,1 Public,-1,,,
+T1597,Search Closed Sources,Reconnaissance,2 Altered,-1,,,
+T1597,Search Closed Sources,Reconnaissance,3 Bespoke,-1,,,
+T1598,Phishing for Information,Reconnaissance,1 Public,-1,,,
+T1598,Phishing for Information,Reconnaissance,2 Altered,-1,,,
+T1598,Phishing for Information,Reconnaissance,3 Bespoke,-1,,,
+T1599,Network Boundary Bridging,Defense Evasion,1 Public,2,Disable boundary filtering entirely,,"Firewall, networking"
+T1599,Network Boundary Bridging,Defense Evasion,2 Altered,3,Add specific infrastructure to allowlist,,
+T1599,Network Boundary Bridging,Defense Evasion,3 Bespoke,4,Allow specific traffic that matches target environment,,
+T1600,Weaken Encryption,Defense Evasion,1 Public,3,Change VPN appliance settings to null cipher,,
+T1600,Weaken Encryption,Defense Evasion,2 Altered,4,Change appliance settings to use weaker key,,
+T1600,Weaken Encryption,Defense Evasion,3 Bespoke,5,Hardware modification to reduce randomness,,
+T1601,Modify System Image,Defense Evasion,1 Public,2,Known method of modification,,
+T1601,Modify System Image,Defense Evasion,2 Altered,3,Different for of the known modification,,
+T1601,Modify System Image,Defense Evasion,3 Bespoke,4,"Novel, os-specific modifications",https://cloud.google.com/blog/topics/threat-intelligence/synful-knock-acis/,Advanced programming and reverse engineering
+T1602,Data from Configuration Repository,Collection,1 Public,1,configuration walker utility,,cli ability
+T1602,Data from Configuration Repository,Collection,2 Altered,2,Custom script to enumerate configuration,,
+T1602,Data from Configuration Repository,Collection,3 Bespoke,3,Custom probes,,
+T1606,Forge Web Credentials,Credential Access,1 Public,2,Using known broken signing method,,
+T1606,Forge Web Credentials,Credential Access,2 Altered,3,Using something stolen from the target (secret) to forge tokens,https://aadinternals.com/aadinternals/,
+T1606,Forge Web Credentials,Credential Access,3 Bespoke,4,Zero day method of forging credentials,,
+T1608,Stage Capabilities,Resource Development,1 Public,-1,,,
+T1608,Stage Capabilities,Resource Development,2 Altered,-1,,,
+T1608,Stage Capabilities,Resource Development,3 Bespoke,-1,,,
+T1609,Container Administration Command,Execution,1 Public,1,Known bad form of administration command,https://blog.aquasec.com/threat-alert-kinsing-malware-container-vulnerability,cli
+T1609,Container Administration Command,Execution,2 Altered,2,Changed form of administration command,,scripting
+T1609,Container Administration Command,Execution,3 Bespoke,3,Novel way of calling the command,https://unit42.paloaltonetworks.com/hildegard-malware-teamtnt/,Programming
+T1610,Deploy Container,"Defense Evasion, Execution",1 Public,1,Known malicious container,https://blog.talosintelligence.com/teamtnt-targeting-aws-alibaba-2/,"scripting, cli"
+T1610,Deploy Container,"Defense Evasion, Execution",2 Altered,2,Modified malicious container,,container build
+T1610,Deploy Container,"Defense Evasion, Execution",3 Bespoke,3,Novel malicious container,,container R&D
+T1611,Escape to Host,Privilege Escalation,1 Public,1,Known container breakout method,https://www.intezer.com/blog/cloud-security/watch-your-containers-doki-infecting-docker-servers-in-the-cloud/,cli
+T1611,Escape to Host,Privilege Escalation,2 Altered,2,Modified breakout method,https://unit42.paloaltonetworks.com/siloscape/,
+T1611,Escape to Host,Privilege Escalation,3 Bespoke,3,Novel breakout method,,
+T1612,Build Image on Host,Defense Evasion,1 Public,2,Known malicious container build,,container build
+T1612,Build Image on Host,Defense Evasion,2 Altered,3,Modified malicious container build process,,
+T1612,Build Image on Host,Defense Evasion,3 Bespoke,4,Environment-specific malicous build,,
+T1613,Container and Resource Discovery,Discovery,1 Public,1,Open source tools,,
+T1613,Container and Resource Discovery,Discovery,2 Altered,2,Custom API queries,,
+T1613,Container and Resource Discovery,Discovery,3 Bespoke,3,Searching target information repositories,,
+T1614,System Location Discovery,Discovery,1 Public,0,Check OS Locale,https://www.prevailion.com/darkwatchman-new-fileless-techniques/,
+T1614,System Location Discovery,Discovery,2 Altered,1,IP geolocation,https://www.secureworks.com/research/threat-profiles/gold-prelude,
+T1614,System Location Discovery,Discovery,3 Bespoke,3,Compromise the devices location service without notification,,
+T1615,Group Policy Discovery,Discovery,1 Public,1,open source method,https://github.com/PowerShellEmpire/Empire,
+T1615,Group Policy Discovery,Discovery,2 Altered,2,Custom enumeration command,https://www.welivesecurity.com/wp-content/uploads/2020/05/ESET_Turla_ComRAT.pdf,
+T1615,Group Policy Discovery,Discovery,3 Bespoke,3,Novel malware payload,,
+T1619,Cloud Storage Object Discovery,Discovery,1 Public,1,Open source tools,,
+T1619,Cloud Storage Object Discovery,Discovery,2 Altered,2,Custom API queries,,
+T1619,Cloud Storage Object Discovery,Discovery,3 Bespoke,3,Searching target information repositories,,
+T1620,Reflective Code Loading,Defense Evasion,1 Public,1,Open source method of reflective loading,https://github.com/PowerShellMafia/PowerSploit,cli ability
+T1620,Reflective Code Loading,Defense Evasion,2 Altered,2,Modified method of loading,https://www.recordedfuture.com/whispergate-malware-corrupts-computers-ukraine,"Programming, os knowledge"
+T1620,Reflective Code Loading,Defense Evasion,3 Bespoke,3,Bespoke method of injection,,
+T1621,Multi-Factor Authentication Request Generation,Credential Access,1 Public,1,triggering many requests for fatigue,https://www.mandiant.com/resources/russian-targeting-gov-business,"web interface, known password"
+T1621,Multi-Factor Authentication Request Generation,Credential Access,2 Altered,2,Triggering requests for password reset configurations,,"web interface, intelligence about specific config"
+T1621,Multi-Factor Authentication Request Generation,Credential Access,3 Bespoke,3,Triggering requests in custom application,,
+T1622,Debugger Evasion,"Defense Evasion, Discovery",1 Public,2,Known function calls like `IsDebuggerPresent()`,https://www.clearskysec.com/wp-content/uploads/2020/08/Dream-Job-Campaign.pdf,Programming
+T1622,Debugger Evasion,"Defense Evasion, Discovery",2 Altered,3,Other function calls that indicate debugger is present,https://www.secureworks.com/research/darktortilla-malware-analysis,
+T1622,Debugger Evasion,"Defense Evasion, Discovery",3 Bespoke,4,Novel timing or memory checks,,Advanced reverse engineering
+T1647,Plist File Modification,Defense Evasion,1 Public,1,Known malicious plist file,,cli
+T1647,Plist File Modification,Defense Evasion,2 Altered,2,Altered malicious plist file,,"basic scripting, os knowledge"
+T1647,Plist File Modification,Defense Evasion,3 Bespoke,3,Custom malicious plist file,https://documents.trendmicro.com/assets/pdf/XCSSET_Technical_Brief.pdf,Programming
+T1648,Serverless Execution,Execution,1 Public,2,Open source commands,https://github.com/RhinoSecurityLabs/pacu,"cli, enumeration"
+T1648,Serverless Execution,Execution,2 Altered,3,Modified commands,,
+T1648,Serverless Execution,Execution,3 Bespoke,4,Novel or environment-specific config,,
+T1649,Steal or Forge Authentication Certificates,Credential Access,1 Public,1,Steal certificates with known tool,https://aadinternals.com/aadinternals/,
+T1649,Steal or Forge Authentication Certificates,Credential Access,2 Altered,2,Steal certificates with custom tool,,
+T1649,Steal or Forge Authentication Certificates,Credential Access,3 Bespoke,3,Forge certificates in a specific environment,https://www.mandiant.com/resources/tracking-apt29-phishing-campaigns,
+T1650,Acquire Access,Resource Development,1 Public,-1,,,
+T1650,Acquire Access,Resource Development,2 Altered,-1,,,
+T1650,Acquire Access,Resource Development,3 Bespoke,-1,,,
+T1651,Cloud Administration Command,Execution,1 Public,1,Known bad form of administration command,https://github.com/RhinoSecurityLabs/pacu,
+T1651,Cloud Administration Command,Execution,2 Altered,2,Changed form of administration command,https://www.microsoft.com/security/blog/2021/10/25/nobelium-targeting-delegated-administrative-privileges-to-facilitate-broader-attacks/,
+T1651,Cloud Administration Command,Execution,3 Bespoke,3,Malicious command that blends in with the environment,,
+T1652,Device Driver Discovery,Discovery,1 Public,1,open source method,,
+T1652,Device Driver Discovery,Discovery,2 Altered,2,Custom enumeration command,,
+T1652,Device Driver Discovery,Discovery,3 Bespoke,3,Novel malware payload,,
+T1653,Power Settings,Persistence,1 Public,0,Increasing timeouts,,
+T1653,Power Settings,Persistence,2 Altered,1,Modifying the system to prevent certain power actions,https://www.fortinet.com/blog/threat-research/condi-ddos-botnet-spreads-via-tp-links-cve-2023-1389,
+T1653,Power Settings,Persistence,3 Bespoke,2,Modifying settings in a target-specific manner,,
+T1654,Log Enumeration,Discovery,1 Public,1,Open source tools,,
+T1654,Log Enumeration,Discovery,2 Altered,2,Custom query commands,https://media.defense.gov/2023/May/24/2003229517/-1/-1/0/CSA_Living_off_the_Land.PDF,
+T1654,Log Enumeration,Discovery,3 Bespoke,3,parsing of environment-specific logs,https://www.mandiant.com/resources/blog/updates-on-chinese-apt-compromising-pulse-secure-vpn-devices,
+T1656,Impersonation,Defense Evasion,1 Public,1,Common impersonation like IT,https://www.crowdstrike.com/blog/analysis-of-intrusion-campaign-targeting-telecom-and-bpo-companies/,Basic IT knowledge
+T1656,Impersonation,Defense Evasion,2 Altered,2,Less common impersonation shared across many targets,https://www.clearskysec.com/wp-content/uploads/2020/08/Dream-Job-Campaign.pdf,Workflow knowledge
+T1656,Impersonation,Defense Evasion,3 Bespoke,3,Target-specific trusted party impersonation,,
+T1657,Financial Theft,Impact,1 Public,-1,,,
+T1657,Financial Theft,Impact,2 Altered,-1,,,
+T1657,Financial Theft,Impact,3 Bespoke,-1,,,
+T1659,Content Injection,"Command and Control, Initial Access",1 Public,2,falsify server responses for something like dns,,server configuration
+T1659,Content Injection,"Command and Control, Initial Access",2 Altered,3,modify server responses to inject additional data,,advanced programming
+T1659,Content Injection,"Command and Control, Initial Access",3 Bespoke,4,Modify responses of target-specific data,,"advanced programming, intelligence"
+T1665,Hide Infrastructure,Command and Control,1 Public,2,use vpn,,scripting and configuration
+T1665,Hide Infrastructure,Command and Control,2 Altered,3,use vpn with specific geolocation,,
+T1665,Hide Infrastructure,Command and Control,3 Bespoke,4,Match c2 to target infrastructure,https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html,
