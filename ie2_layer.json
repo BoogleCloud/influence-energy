@@ -1,12 +1,12 @@
 {
-	"name": "layer",
+	"name": "Influence Energy Level 2",
 	"versions": {
 		"attack": "15",
 		"navigator": "5.1.0",
 		"layer": "4.5"
 	},
 	"domain": "enterprise-attack",
-	"description": "",
+	"description": "Techniques that require Influence Energy Level 2",
 	"filters": {
 		"platforms": [
 			"Windows",
@@ -22,7 +22,7 @@
 			"Azure AD"
 		]
 	},
-	"sorting": 0,
+	"sorting": 3,
 	"layout": {
 		"layout": "side",
 		"aggregateFunction": "average",
@@ -42,7 +42,12 @@
 			"comment": "Modifying a public data obfuscation method would require knowledge of the underlying protocol and implementation",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -53,7 +58,12 @@
 			"comment": "Embedding pieces of mimikatz code as a plugin in another tool",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -64,7 +74,12 @@
 			"comment": "Commands that mimic target backup strategies",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -75,7 +90,12 @@
 			"comment": "Modifying the command to copy in a slightly different way",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -84,20 +104,40 @@
 			"score": 100,
 			"color": "",
 			"comment": "Malware that can call functions directly",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://s7d2.scene7.com/is/content/cylance/prod/cylance-web/en-us/resources/knowledge-center/resource-library/reports/Op_Dust_Storm_Report.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1008",
 			"tactic": "command-and-control",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Something like a hardcoded secondary domain",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://vblocalhost.com/uploads/VB2021-Kayal-etal.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -108,18 +148,28 @@
 			"comment": "GetForegroundWindow",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1011",
 			"tactic": "exfiltration",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "Known protocol with environment-alteration",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -128,20 +178,40 @@
 			"score": 50,
 			"color": "",
 			"comment": "Use Windows APIs",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://us-cert.cisa.gov/ncas/analysis-reports/ar20-216a"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1014",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Setting environment variables to hook the dynamic linker",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.welivesecurity.com/2017/10/30/windigo-ebury-update-2/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -150,9 +220,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Calling API commands",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.cybereason.com/blog/royal-ransomware-analysis"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -163,7 +243,12 @@
 			"comment": "Looking at persistent connections",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -174,7 +259,12 @@
 			"comment": "Changing the script",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -183,9 +273,19 @@
 			"score": 100,
 			"color": "",
 			"comment": "Custom tool for creating remote connections",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://securelist.com/apt-style-bank-robberies-increase-with-metel-gcman-and-carbanak-2-0-attacks/73638/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -196,7 +296,12 @@
 			"comment": "Commands that mimic target backup strategies",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -205,31 +310,56 @@
 			"score": 50,
 			"color": "",
 			"comment": "Multilayer encoding",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.mcafee.com/enterprise/en-us/assets/reports/rp-cuba-ransomware.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1029",
 			"tactic": "exfiltration",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Powershell empire lets you schedule file upload chunks",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1030",
 			"tactic": "exfiltration",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Cobalt strike uploads 512KB chunks each time",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://web.archive.org/web/20210825130434/https://cobaltstrike.com/downloads/csmanual38.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -240,7 +370,12 @@
 			"comment": "Custom function calling getlogin() or similar",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -249,9 +384,19 @@
 			"score": 100,
 			"color": "",
 			"comment": "Matching filenames on the compromised system",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.crowdstrike.com/blog/observations-from-the-stellarparticle-campaign/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -262,7 +407,12 @@
 			"comment": "Custom init.d script",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -273,7 +423,12 @@
 			"comment": "Custom init.d script",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -284,7 +439,12 @@
 			"comment": "Commands that mimic target backup strategies",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -293,9 +453,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Hook network APIs",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://blog.trendmicro.com/trendlabs-security-intelligence/new-banking-malware-uses-network-sniffing-for-data-theft/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -304,20 +474,35 @@
 			"score": 50,
 			"color": "",
 			"comment": "Hook network APIs",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://blog.trendmicro.com/trendlabs-security-intelligence/new-banking-malware-uses-network-sniffing-for-data-theft/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1041",
 			"tactic": "exfiltration",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Transfer with open source method",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -326,9 +511,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Malware module for scanning",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://github.com/n1nj4sec/pupy"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -337,20 +532,40 @@
 			"score": 50,
 			"color": "",
 			"comment": "Different way of calling wmic",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.welivesecurity.com/2022/03/01/isaacwiper-hermeticwizard-wiper-worm-targeting-ukraine/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1048",
 			"tactic": "exfiltration",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Transfer with open source method",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://o365blog.com/aadinternals"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -359,20 +574,35 @@
 			"score": 50,
 			"color": "",
 			"comment": "Discovery functions in malware",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/w32_duqu_the_precursor_to_the_next_stuxnet.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1052",
 			"tactic": "exfiltration",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "Custom file structure on medium",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -383,7 +613,12 @@
 			"comment": "Creating your own invocation of scheduled task",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -394,7 +629,12 @@
 			"comment": "Creating your own invocation of scheduled task",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -405,7 +645,12 @@
 			"comment": "Creating your own invocation of scheduled task",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -414,9 +659,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Calling API functions",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://blog.malwarebytes.com/threat-analysis/2021/01/retrohunting-apt37-north-korean-apt-used-vba-self-decode-technique-to-inject-rokrat/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -425,31 +680,61 @@
 			"score": 50,
 			"color": "",
 			"comment": "Calling API functions",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://blog.malwarebytes.com/threat-analysis/2021/01/retrohunting-apt37-north-korean-apt-used-vba-self-decode-technique-to-inject-rokrat/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1056",
 			"tactic": "collection",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Meterpreter keyscanner",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.offsec.com/metasploit-unleashed/keylogging/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1056",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Meterpreter keyscanner",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.offsec.com/metasploit-unleashed/keylogging/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -458,9 +743,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Malware module for scanning",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.fortinet.com/blog/threat-research/in-depth-analysis-of-net-malware-javaupdtr"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -471,18 +766,28 @@
 			"comment": "writing scripts",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1068",
 			"tactic": "privilege-escalation",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Known exploits",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -491,9 +796,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Malware function for groups",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://cloud.google.com/blog/topics/threat-intelligence/suspected-chinese-espionage-group-targeting-maritime-and-engineering-industries/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -502,9 +817,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Clearing artifacts that specific malware writes",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.cybereason.com/blog/back-to-the-future-inside-the-kimsuky-kgh-spyware-suite"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -515,29 +840,44 @@
 			"comment": "Modified http communication process",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1072",
 			"tactic": "execution",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "Hijack group policy",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1072",
 			"tactic": "lateral-movement",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "Hijack group policy",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -548,7 +888,12 @@
 			"comment": "Using environment-specific data stores",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -559,7 +904,12 @@
 			"comment": "Phsihing access to actual accounts",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -570,7 +920,12 @@
 			"comment": "Phsihing access to actual accounts",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -581,7 +936,12 @@
 			"comment": "Phsihing access to actual accounts",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -592,7 +952,12 @@
 			"comment": "Phsihing access to actual accounts",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -601,9 +966,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Customized content infection",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.secureworks.com/research/bronze-butler-targets-japanese-businesses"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -612,9 +987,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Query web APIs to determine attributes",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://unit42.paloaltonetworks.com/unit42-bisonal-malware-used-attacks-russia-south-korea/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -623,9 +1008,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Malware function for groups",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.forcepoint.com/sites/default/files/resources/files/forcepoint-security-labs-monsoon-analysis-report.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -636,7 +1031,12 @@
 			"comment": "Different account discovery commands",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -645,42 +1045,67 @@
 			"score": 50,
 			"color": "",
 			"comment": "Turn victim systems into proxies",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.us-cert.gov/sites/default/files/publications/MAR-10135536-F.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1091",
 			"tactic": "initial-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Known auto run malicious file",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1091",
 			"tactic": "lateral-movement",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Known auto run malicious file",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1092",
 			"tactic": "command-and-control",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Open source software for communicating over mass storage devices",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -689,9 +1114,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "ICMP to communicate",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.fireeye.com/blog/threat-research/2017/05/cyber-espionage-apt32.html"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -702,7 +1137,12 @@
 			"comment": "Different forms of changes",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -713,18 +1153,33 @@
 			"comment": "Different forms of changes",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1102",
 			"tactic": "command-and-control",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Pastebin for c2",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -733,9 +1188,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Multi-staged malware",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://blog.malwarebytes.com/threat-intelligence/2022/01/north-koreas-lazarus-apt-leverages-windows-update-client-github-in-latest-campaign/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -746,18 +1211,33 @@
 			"comment": "Download via basic URL",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1106",
 			"tactic": "execution",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Using simple API calls to evoke shell commands",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://research.checkpoint.com/2020/naikon-apt-cyber-espionage-reloaded/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -768,18 +1248,33 @@
 			"comment": "Using modified word list",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1111",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Replay old tokens hoping for approval",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.microsoft.com/security/blog/2022/03/22/dev-0537-criminal-actor-targeting-organizations-for-data-exfiltration-and-destruction/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -790,18 +1285,33 @@
 			"comment": "Using direct file access to edit",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1113",
 			"tactic": "collection",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Metasploit Screenspy",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/post/windows/gather/screen_spy.md"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -810,9 +1320,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Logging in with compromised credentials and downloading data",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://blog.certfa.com/posts/charming-kitten-christmas-gift/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -823,7 +1343,12 @@
 			"comment": "Scraping memory for clipboard",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -834,7 +1359,12 @@
 			"comment": "Custom configuration of script that looks at common OS locations",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -843,9 +1373,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Malware module for scanning",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://web-assets.esetstatic.com/wls/2016/05/Operation-Groundbait.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -854,9 +1394,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Custom tools to capture audio",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.fireeye.com/blog/threat-research/2018/03/suspected-chinese-espionage-group-targeting-maritime-and-engineering-industries.html"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -865,42 +1415,82 @@
 			"score": 50,
 			"color": "",
 			"comment": "Use Windows APIs",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.welivesecurity.com/2018/11/20/sednit-whats-going-zebrocy/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1125",
 			"tactic": "collection",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Empire webcam module",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://github.com/PowerShellEmpire/Empire"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1127",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Modules that use MSBuild.exe",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://github.com/PowerShellEmpire/Empire"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1129",
 			"tactic": "execution",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Public way of loading a dll",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://cybersecurity.att.com/blogs/labs-research/the-odd-case-of-a-gh0strat-variant"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -909,9 +1499,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "modifications to well known encoding",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://securingtomorrow.mcafee.com/mcafee-labs/hidden-cobra-targets-turkish-financial-sector-new-bankshot-implant/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -922,7 +1522,12 @@
 			"comment": "Log into service from trusted ip address",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -933,7 +1538,12 @@
 			"comment": "Log into service from trusted ip address",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -942,9 +1552,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Modified version of stealing/create tokens",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.fireeye.com/blog/threat-research/2019/04/pick-six-intercepting-a-fin6-intrusion.html"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -953,9 +1573,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Modified version of stealing/create tokens",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.fireeye.com/blog/threat-research/2019/04/pick-six-intercepting-a-fin6-intrusion.html"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -966,7 +1596,12 @@
 			"comment": "Custom tool that queries remote hosts",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -977,7 +1612,12 @@
 			"comment": "Target-specific account creation",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -988,7 +1628,12 @@
 			"comment": "Different form of malicious method",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -997,9 +1642,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Advanced decoding like using certutil",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://researchcenter.paloaltonetworks.com/2018/02/unit42-sofacy-attacks-multiple-government-entities/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1008,42 +1663,77 @@
 			"score": 100,
 			"color": "",
 			"comment": "New extension with hidden malicious content",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.zdnet.com/article/cyber-espionage-group-uses-chrome-extension-to-infect-victims/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1185",
 			"tactic": "collection",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Known modules that inject into browsers",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://web.archive.org/web/20210825130434/https://cobaltstrike.com/downloads/csmanual38.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1187",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Open login window for users to enter creds",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://researchcenter.paloaltonetworks.com/2018/08/unit42-darkhydrus-uses-phishery-harvest-credentials-middle-east/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1189",
 			"tactic": "initial-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Using known client-side exploit",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1054,18 +1744,33 @@
 			"comment": "altered form of known exploit",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1195",
 			"tactic": "initial-access",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "Inserting custom malware into software supply chain",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "http://blog.talosintelligence.com/2017/09/avast-distributes-malware.html"
+				}
+			],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1074,9 +1779,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Custom interaction with the bits database",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.intrinsec.com/egregor-prolock/?cn-reloaded=1"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1085,20 +1800,35 @@
 			"score": 50,
 			"color": "",
 			"comment": "Custom interaction with the bits database",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.intrinsec.com/egregor-prolock/?cn-reloaded=1"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1199",
 			"tactic": "initial-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Acquiring access through company with known bad associations",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1109,7 +1839,12 @@
 			"comment": "Known hacker hardware like rubber ducky",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1118,9 +1853,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "CrackMapExec",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://github.com/byt3bl33d3r/CrackMapExec/wiki/SMB-Command-Reference"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1131,18 +1876,28 @@
 			"comment": "Windows subsystem for Linux invokations",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1203",
 			"tactic": "execution",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "known exploits",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1153,40 +1908,75 @@
 			"comment": "Putting a file for execution in an org-specific place it will be executed",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1205",
 			"tactic": "command-and-control",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Wake on LAN",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.bleepingcomputer.com/news/security/ryuk-ransomware-uses-wake-on-lan-to-encrypt-offline-devices/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1205",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Wake on LAN",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.bleepingcomputer.com/news/security/ryuk-ransomware-uses-wake-on-lan-to-encrypt-offline-devices/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1205",
 			"tactic": "persistence",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Wake on LAN",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.bleepingcomputer.com/news/security/ryuk-ransomware-uses-wake-on-lan-to-encrypt-offline-devices/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1195,42 +1985,77 @@
 			"score": 0,
 			"color": "",
 			"comment": "Mimikatz LSADUMP::DCShadow",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://github.com/gentilkiwi/mimikatz"
+				}
+			],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1210",
 			"tactic": "lateral-movement",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Known exploit",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://web-assets.esetstatic.com/wls/2020/06/ESET_InvisiMole.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1211",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Public exploit code",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1212",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Known exploit",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://adsecurity.org/?p=1515"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1241,18 +2066,33 @@
 			"comment": "Modified scrapers to look for data of interest",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1216",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Well known invocation of lolbin",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://enigma0x3.net/2017/08/03/wsh-injection-a-case-study/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1261,9 +2101,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Custom filesystem enumeration command",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://research.nccgroup.com/2021/01/12/abusing-cloud-services-to-fly-under-the-radar/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1274,7 +2124,12 @@
 			"comment": "Different way of calling binary",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1283,9 +2138,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Install teamviewer on target",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://thedfirreport.com/2021/11/29/continuing-the-bazar-ransomware-story/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1296,18 +2161,33 @@
 			"comment": "Different way of calling msxsl.exe",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1221",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Open source injection tool",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://github.com/ryhanson/phishery"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1318,18 +2198,33 @@
 			"comment": "Novel way of modifying permissions",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1480",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Specific execution flags",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.cybereason.com/blog/dropping-anchor-from-a-trickbot-infection-to-the-discovery-of-the-anchor-malware"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1338,31 +2233,61 @@
 			"score": 50,
 			"color": "",
 			"comment": "Custom filesystem enumeration command",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://posts.specterops.io/a-guide-to-attacking-domain-trusts-971e52cb2944"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1484",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "GPO to push known TTP",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://wald0.com/?p=179"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1484",
 			"tactic": "privilege-escalation",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "GPO to push known TTP",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://wald0.com/?p=179"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1373,7 +2298,12 @@
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1384,7 +2314,12 @@
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1395,7 +2330,12 @@
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1406,7 +2346,12 @@
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1417,7 +2362,12 @@
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1428,7 +2378,12 @@
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1439,7 +2394,12 @@
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1448,9 +2408,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Check for user activity like mouse movements",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.welivesecurity.com/wp-content/uploads/2019/07/ESET_Okrum_and_Ketrican.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1459,31 +2429,51 @@
 			"score": 50,
 			"color": "",
 			"comment": "Check for user activity like mouse movements",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.welivesecurity.com/wp-content/uploads/2019/07/ESET_Okrum_and_Ketrican.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1498",
 			"tactic": "impact",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1499",
 			"tactic": "impact",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1494,7 +2484,12 @@
 			"comment": "Modified malicious software components",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1503,20 +2498,40 @@
 			"score": 50,
 			"color": "",
 			"comment": "Query registry for installed applications",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.cybereason.com/blog/a-bazar-of-tricks-following-team9s-development-cycles"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1525",
 			"tactic": "persistence",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Open source implant toolkit",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://github.com/RhinoSecurityLabs/ccat"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1527,18 +2542,33 @@
 			"comment": "Custom filesystem enumeration command",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1528",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Dumping of tokens abusing existingi access",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.inguardians.com/peirates/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1549,7 +2579,12 @@
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1558,20 +2593,35 @@
 			"score": 50,
 			"color": "",
 			"comment": "Modified scrapers to look for data of interest",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-320a"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1531",
 			"tactic": "impact",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1582,18 +2632,28 @@
 			"comment": "Target-specific messages",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1535",
 			"tactic": "defense-evasion",
-			"score": 100,
+			"score": 0,
 			"color": "",
 			"comment": "Deploying in a region that specifically avoids this target's monitoring",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1604,7 +2664,12 @@
 			"comment": "Using different cloud account",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1615,18 +2680,33 @@
 			"comment": "Log in from existing computer",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1539",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Man-in-the-middle proxy",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://github.com/kgretzky/evilginx2"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1635,9 +2715,19 @@
 			"score": 0,
 			"color": "",
 			"comment": "MBR bootkit",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.fireeye.com/blog/threat-research/2015/12/fin1-targets-boot-record.html"
+				}
+			],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1646,9 +2736,19 @@
 			"score": 0,
 			"color": "",
 			"comment": "MBR bootkit",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.fireeye.com/blog/threat-research/2015/12/fin1-targets-boot-record.html"
+				}
+			],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1657,9 +2757,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Altered malicious service",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://dragos.com/blog/crashoverride/CrashOverride-01.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1668,9 +2778,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Altered malicious service",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://dragos.com/blog/crashoverride/CrashOverride-01.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1679,9 +2799,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Altered form of known malicious trigger",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://github.com/RhinoSecurityLabs/pacu"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1690,9 +2820,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Altered form of known malicious trigger",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://github.com/RhinoSecurityLabs/pacu"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1703,7 +2843,12 @@
 			"comment": "Altered form of malicious startup task",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1714,7 +2859,12 @@
 			"comment": "Altered form of malicious startup task",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1725,7 +2875,12 @@
 			"comment": "Altered form of bypass",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1736,29 +2891,44 @@
 			"comment": "Altered form of bypass",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1550",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "pass the hash",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1550",
 			"tactic": "lateral-movement",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "pass the hash",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1767,31 +2937,56 @@
 			"score": 50,
 			"color": "",
 			"comment": "Search chat history or code repositories",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.microsoft.com/security/blog/2022/03/22/dev-0537-criminal-actor-targeting-organizations-for-data-exfiltration-and-destruction/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1553",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Using something like .iso files to avoid mark-of-the-web",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.trendmicro.com/en_us/research/19/h/ta505-at-it-again-variety-is-the-spice-of-servhelper-and-flawedammyy.html"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1554",
 			"tactic": "persistence",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Known trojan template",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1800,86 +2995,161 @@
 			"score": 50,
 			"color": "",
 			"comment": "Grabbing files with altered tools",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://github.com/AlessandroZ/LaZagne"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1556",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "trojanized function in known way",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.welivesecurity.com/2014/02/21/an-in-depth-analysis-of-linuxebury/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1556",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "trojanized function in known way",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.welivesecurity.com/2014/02/21/an-in-depth-analysis-of-linuxebury/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1556",
 			"tactic": "persistence",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "trojanized function in known way",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.welivesecurity.com/2014/02/21/an-in-depth-analysis-of-linuxebury/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1557",
 			"tactic": "collection",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "cache poisoning",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.bitdefender.com/blog/labs/luminousmoth-plugx-file-exfiltration-and-persistence-revisited"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1557",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "cache poisoning",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.bitdefender.com/blog/labs/luminousmoth-plugx-file-exfiltration-and-persistence-revisited"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1558",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Kerberoasting",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://attack.mitre.org/techniques/T1558/003/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1559",
 			"tactic": "execution",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Open source IPC abuse",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1888,20 +3158,35 @@
 			"score": 50,
 			"color": "",
 			"comment": "Archive via Library",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://securelist.com/use-of-dns-tunneling-for-cc-communications/78203/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1561",
 			"tactic": "impact",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1912,7 +3197,12 @@
 			"comment": "Disable other service that might detect malware",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1923,7 +3213,12 @@
 			"comment": "Altered commands from suspicious",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1932,20 +3227,35 @@
 			"score": 50,
 			"color": "",
 			"comment": "Tweaked versions of known methods",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.secureworks.com/research/darktortilla-malware-analysis"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1565",
 			"tactic": "impact",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1956,7 +3266,12 @@
 			"comment": "Target-specific email",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1967,7 +3282,12 @@
 			"comment": "Using different service or account",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1978,7 +3298,12 @@
 			"comment": "Modifications to known algorithm",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -1987,9 +3312,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Calling psexec in a different way",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://research.nccgroup.com/2021/01/12/abusing-cloud-services-to-fly-under-the-radar/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2000,7 +3335,12 @@
 			"comment": "Altered commands from suspicious",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2011,29 +3351,54 @@
 			"comment": "Using another random port",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1572",
 			"tactic": "command-and-control",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "SSH Tunneling",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www2.fireeye.com/rs/848-DID-242/images/rpt-fin6.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1573",
 			"tactic": "command-and-control",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Public algorithm with static key",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "http://cdn0.vox-cdn.com/assets/4589853/crowdstrike-intelligence-report-putter-panda.original.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2042,9 +3407,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Altered hijacking implementation",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.fireeye.com/blog/threat-research/2014/04/new-zero-day-exploit-targeting-internet-explorer-versions-9-through-11-identified-in-targeted-attacks.html"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2053,9 +3428,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Altered hijacking implementation",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.fireeye.com/blog/threat-research/2014/04/new-zero-day-exploit-targeting-internet-explorer-versions-9-through-11-identified-in-targeted-attacks.html"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2064,20 +3449,35 @@
 			"score": 50,
 			"color": "",
 			"comment": "Altered hijacking implementation",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.fireeye.com/blog/threat-research/2014/04/new-zero-day-exploit-targeting-internet-explorer-versions-9-through-11-identified-in-targeted-attacks.html"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1578",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Known cloud modifications",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2088,194 +3488,284 @@
 			"comment": "Custom API queries",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1583",
 			"tactic": "resource-development",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1584",
 			"tactic": "resource-development",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1585",
 			"tactic": "resource-development",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1586",
 			"tactic": "resource-development",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1587",
 			"tactic": "resource-development",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1588",
 			"tactic": "resource-development",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1589",
 			"tactic": "reconnaissance",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1590",
 			"tactic": "reconnaissance",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1591",
 			"tactic": "reconnaissance",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1592",
 			"tactic": "reconnaissance",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1593",
 			"tactic": "reconnaissance",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1594",
 			"tactic": "reconnaissance",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1595",
 			"tactic": "reconnaissance",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1596",
 			"tactic": "reconnaissance",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1597",
 			"tactic": "reconnaissance",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1598",
 			"tactic": "reconnaissance",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1599",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Disable boundary filtering entirely",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2286,18 +3776,28 @@
 			"comment": "Change VPN appliance settings to null cipher",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1601",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Known method of modification",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2308,18 +3808,28 @@
 			"comment": "Custom script to enumerate configuration",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1606",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Using known broken signing method",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2330,7 +3840,12 @@
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2341,7 +3856,12 @@
 			"comment": "Changed form of administration command",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2352,7 +3872,12 @@
 			"comment": "Modified malicious container",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2363,7 +3888,12 @@
 			"comment": "Modified malicious container",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2372,20 +3902,35 @@
 			"score": 50,
 			"color": "",
 			"comment": "Modified breakout method",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://unit42.paloaltonetworks.com/siloscape/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1612",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Known malicious container build",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2396,7 +3941,12 @@
 			"comment": "Custom API queries",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2405,9 +3955,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "IP geolocation",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.secureworks.com/research/threat-profiles/gold-prelude"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2416,9 +3976,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Custom enumeration command",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.welivesecurity.com/wp-content/uploads/2020/05/ESET_Turla_ComRAT.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2429,7 +3999,12 @@
 			"comment": "Custom API queries",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2438,9 +4013,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Modified method of loading",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.recordedfuture.com/whispergate-malware-corrupts-computers-ukraine"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2451,29 +4036,54 @@
 			"comment": "Triggering requests for password reset configurations",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1622",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Known function calls like `IsDebuggerPresent()`",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.clearskysec.com/wp-content/uploads/2020/08/Dream-Job-Campaign.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1622",
 			"tactic": "discovery",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Known function calls like `IsDebuggerPresent()`",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.clearskysec.com/wp-content/uploads/2020/08/Dream-Job-Campaign.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2484,18 +4094,33 @@
 			"comment": "Altered malicious plist file",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1648",
 			"tactic": "execution",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "Open source commands",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://github.com/RhinoSecurityLabs/pacu"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2506,18 +4131,28 @@
 			"comment": "Steal certificates with custom tool",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1650",
 			"tactic": "resource-development",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2526,9 +4161,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Changed form of administration command",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.microsoft.com/security/blog/2021/10/25/nobelium-targeting-delegated-administrative-privileges-to-facilitate-broader-attacks/"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2539,7 +4184,12 @@
 			"comment": "Custom enumeration command",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2550,7 +4200,12 @@
 			"comment": "Modifying settings in a target-specific manner",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Bespoke"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2559,9 +4214,19 @@
 			"score": 50,
 			"color": "",
 			"comment": "Custom query commands",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://media.defense.gov/2023/May/24/2003229517/-1/-1/0/CSA_Living_off_the_Land.PDF"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
@@ -2570,68 +4235,119 @@
 			"score": 50,
 			"color": "",
 			"comment": "Less common impersonation shared across many targets",
-			"links": [],
+			"links": [
+				{
+					"label": "example",
+					"url": "https://www.clearskysec.com/wp-content/uploads/2020/08/Dream-Job-Campaign.pdf"
+				}
+			],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1657",
 			"tactic": "impact",
-			"score": 50,
+			"score": 0,
 			"color": "",
 			"comment": "",
 			"links": [],
 			"enabled": false,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Altered"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1659",
 			"tactic": "command-and-control",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "falsify server responses for something like dns",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1659",
 			"tactic": "initial-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "falsify server responses for something like dns",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1665",
 			"tactic": "command-and-control",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "use vpn",
 			"links": [],
 			"enabled": true,
-			"metadata": [],
+			"metadata": [
+				{
+					"name": "capability_level",
+					"value": "Public"
+				}
+			],
 			"showSubtechniques": false
 		}
 	],
 	"gradient": {
 		"colors": [
-			"#ff6666ff",
-			"#ffe766ff",
-			"#8ec843ff"
+			"#cad4daff",
+			"#3182bdff"
 		],
 		"minValue": 0,
 		"maxValue": 100
 	},
 	"legendItems": [],
-	"metadata": [],
-	"links": [],
+	"metadata": [
+		{
+			"name": "version",
+			"value": "1.0"
+		},
+		{
+			"name": "author",
+			"value": "Optimizer LLC"
+		},
+		{
+			"name": "date",
+			"value": "2024-09-22"
+		}
+	],
+	"links": [
+		{
+			"label": "Influence Energy",
+			"url": "https://www.optimizer.llc"
+		},
+		{
+			"label": "Source Repository",
+			"url": "'https://github.com/BoogleCloud/influence-energy'"
+		}
+	],
 	"showTacticRowBackground": false,
 	"tacticRowBackground": "#dddddd",
 	"selectTechniquesAcrossTactics": true,

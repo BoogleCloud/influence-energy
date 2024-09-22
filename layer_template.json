@@ -22,7 +22,7 @@
 			"Azure AD"
 		]
 	},
-	"sorting": 0,
+	"sorting": 3,
 	"layout": {
 		"layout": "side",
 		"aggregateFunction": "average",
@@ -37,9 +37,8 @@
 	],
 	"gradient": {
 		"colors": [
-			"#ff6666ff",
-			"#ffe766ff",
-			"#8ec843ff"
+			"#cad4daff",
+			"#3182bdff"
 		],
 		"minValue": 0,
 		"maxValue": 100
